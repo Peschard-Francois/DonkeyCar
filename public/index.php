@@ -10,6 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donkey Car</title>
 </head>
+<header>
+    <?php include ('../include/header.php') ?>
+</header>
 <body>
     <h1>Welcome to Donkey Car Rent Online</h1>
     <div>
