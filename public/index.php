@@ -11,7 +11,14 @@
     <title>Donkey Car</title>
 </head>
 <body>
-    <h1>Welcome to Donkey Car Online Location</h1>
-<h2>Salut les amis</h2>
+    <h1>Welcome to Donkey Car Rent Online</h1>
+    <div>
+        <form>
+            <label>vehicule</label>       
+            <input id="searchbar" type="text" name="search" placeholder="recherche">
+            <label>du</label><input id="departure" type="date">
+            <label>au</label><input id="arrival" type="date">
+        </form>
+    </div>
 </body>
 </html>
