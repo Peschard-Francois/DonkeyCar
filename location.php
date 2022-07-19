@@ -20,7 +20,8 @@ include './include/header.php';
     <div class="d-flex justify-content-center">
         <h1>Recherche d'un véhicule à louer</h1>
     </div>
-    <form action="formresult.php" method="post">
+    <!-- ACTION A AJOUTER -->
+    <form action="" method="post">
         <div class="mb-3">
             <label for="adress">Adresse :</label>
             <input type="text" class="form-control" id="adress" name="adress" autofocus>
