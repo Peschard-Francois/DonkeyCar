@@ -1,4 +1,5 @@
 <?php
+include '../include/header.php';
 ?>
 
 
@@ -12,12 +13,6 @@
     <title>Donkey Car</title>
 </head>
 <body>
-    <div>
-        <button  type="submit" name="submit"><a href="">Location</a></button>
-        <button  type="submit" name="submit"><a href="">Véhicule</a></button>
-        <button  type="submit" name="submit"><a href="">Contact</a></button>
-        <input id="searchbar" type="text" name="search" placeholder="recherche">
-    </div>
 
     <h1>Welcome to Donkey Car Rent Online</h1>
     <div>
