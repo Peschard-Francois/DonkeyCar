@@ -21,21 +21,6 @@ $vehicule=$results->fetchAll();
        <?php include ('include/header.php') ?>
     </header>
     <body>
-        <!--<div class="modal-container">
-            <div class="overlay modal-trigger"></div>
-            <div class="modal">
-                <button class="close-modal modal-trigger">X</button>
-                <?php /*foreach ($vehicule as $vehicules) : */?>
-                    <div class="carContainer">
-                        <img class="imgCars" src="<?/*= $vehicules['imgVehicle']*/?>" alt="Image du véhicule">
-                        <div><?/*= $vehicules['brandVehicle']*/?>  <?/*= $vehicules['modelsVehicle']*/?></div>
-                    </div>
-                <?php /*endforeach */?>
-            </div>
-        </div>
-            <button class="modal-btn modal-trigger">test</button>-->
-
-
         <div  class="listeCars">
             <?php foreach ($vehicule as $vehicules) : ?>
             <div class="carContainer">
