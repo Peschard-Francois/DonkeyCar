@@ -1,12 +1,12 @@
 
 
-INSERT INTO `vehicle` (brandVehicle,modelsVehicle,rangeVehicle,energyVehicle,yearVehicle,nbseatsVehicle,gearboxVehicle)
+INSERT INTO `vehicle` (brandVehicle,modelsVehicle,rangeVehicle,energyVehicle,yearVehicle,nbseatsVehicle,gearboxVehicle,imgVehicle)
 VALUES
-('Mercedes','Classe C','Berline','Diesel','2021-01-01',5,'Automatique'),
-('Audi','A5','Berline','Essence','2021-01-01',5,'Automatique'),
-('Bwm','Série 5','Berline','Hybride','2022-01-01',5,'Automatique'),
-('Mini','Cooper','Citadine','Essence','2021-01-01',4,'Manuel'),
-('Buggati','Chiron','Coupé','Essence','2022-01-01',2,'Automatique');
+('Mercedes','Classe C','Berline','Diesel','2021-01-01',5,'Automatique','https://www.caroom.fr/blog/wp-content/uploads/2021/02/20c0673-002lr.jpg'),
+('Audi','A5','Berline','Essence','2021-01-01',5,'Automatique','https://images.alphacoders.com/104/thumb-1920-1040802.jpg'),
+('Bwm','Série 5','Berline','Hybride','2022-01-01',5,'Automatique','https://www.automobile-magazine.fr/asset/cms/840x394/173354/config/122130/p90389007.jpeg'),
+('Mini','Cooper','Citadine','Essence','2021-01-01',4,'Manuel','https://www.luxury-club.fr/wp-content/uploads/2020/01/mini-cooper_s_cabriolet-13.jpg'),
+('Buggati','Chiron','Coupé','Essence','2022-01-01',2,'Automatique','https://www.luxury-club.fr/wp-content/uploads/2020/01/bugatti-chiron-20.jpg');
 
 
 INSERT INTO `client` (lastnameClient,firstnameClient,adressClient,cityClient,zipcodeClient,phoneClient,mailClient)

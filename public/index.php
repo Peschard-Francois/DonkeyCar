@@ -12,6 +12,9 @@ include '../include/header.php';
     <link rel="icon" href="/DonkeyCar/public/assets/DONcarkey.png" type="image/x-icon">
     <title>Donkey Car</title>
 </head>
+<header>
+    <?php include ('../include/header.php') ?>
+</header>
 <body>
 
     <h1>Welcome to Donkey Car Rent Online</h1>
