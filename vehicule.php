@@ -26,12 +26,14 @@ $vehicule=$results->fetchAll();
             <div class="modal">
                 <button class="close-modal modal-trigger">X</button>
                 <?php /*foreach ($vehicule as $vehicules) : */?>
-
-                    <h1><?/*= $vehicules['brandVehicle']*/?>  <?/*= $vehicules['modelsVehicle']*/?></h1>
+                    <div class="carContainer">
+                        <img class="imgCars" src="<?/*= $vehicules['imgVehicle']*/?>" alt="Image du véhicule">
+                        <div><?/*= $vehicules['brandVehicle']*/?>  <?/*= $vehicules['modelsVehicle']*/?></div>
+                    </div>
                 <?php /*endforeach */?>
             </div>
-        </div>-->
-
+        </div>
+            <button class="modal-btn modal-trigger">test</button>-->
 
 
         <div  class="listeCars">
@@ -40,7 +42,6 @@ $vehicule=$results->fetchAll();
                 <img class="imgCars" src="<?= $vehicules['imgVehicle']?>" alt="Image du véhicule">
                 <div><?= $vehicules['brandVehicle']?>  <?= $vehicules['modelsVehicle']?></div>
             </div>
-
             <?php endforeach ?>
         </div>
 

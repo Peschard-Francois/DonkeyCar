@@ -6,6 +6,7 @@
   padding: 0;
 }
 
+
 /*
 .modal-btn{
   padding: 10px 14px;
@@ -43,7 +44,7 @@ display: block;
   position: absolute;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, 50%);
+
 }
 
 .close-modal{
@@ -67,10 +68,11 @@ display: block;
   line-height: 1.4;
   margin-bottom: 5px;
 }
+
+
+
+
 */
-
-
-
 
 .carContainer{
   display: flex;
@@ -85,12 +87,13 @@ display: block;
   height: 200px;
 
   border: black solid 2px;
-  margin: 60px 10px 10px ;
+
 
 }
 
 .listeCars{
   display: flex;
+
   flex-direction: row;
   align-items: center;
   height: 200px;
