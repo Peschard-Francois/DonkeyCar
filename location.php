@@ -1,8 +1,4 @@
-<?php
-
-include './include/header.php';
-
-?>
+git
 
 <!DOCTYPE html>
 <html lang="en">

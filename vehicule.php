@@ -41,13 +41,13 @@ $vehicule=$results->fetchAll();
 
                 <div class="carInfo">
                     <div class = "titleCarInfo">
-                        <?= "<h3>Louer une "?><?=$vehicules['brandVehicle']?> <?= $vehicules['modelsVehicle']?><?= " à partir de "?><br>
+                        <h3>Louer une </h3><?=$vehicules['brandVehicle']?> <?= $vehicules['modelsVehicle']?><H4> à partir de </h4><br>
                     </div>
                     <div class="price">
-                        <?= "<H4>varPRIX"?>
+                        <H4>varPRIX</h4>
                     </div>
-                    <?= "type : "?><?=$vehicules['rangeVehicle']?> <br> <?= "Places : "?><?= $vehicules['nbseatsVehicle']?><br>
-                    <?= "boite de vitesse : "?><?= $vehicules['gearboxVehicle']?><br>
+                    <h4> Type : </h4> <br> <h4>Places :</h4><?= $vehicules['nbseatsVehicle']?><br>
+                    <h4>boite de vitesse :</h4><?= $vehicules['gearboxVehicle']?><br>
                     <div  class="button">
                     <button  type="submit" name="submit"><a href="">plus de details</a></button>
                     </div>
@@ -60,6 +60,7 @@ $vehicule=$results->fetchAll();
         <script src="./src/js/script.js"></script>
     </body>
 </html>
+
 
 
 
