@@ -21,12 +21,39 @@ $vehicule=$results->fetchAll();
        <?php include ('include/header.php') ?>
     </header>
     <body>
+
+        <!--<div class="modal-container">
+            <div class="overlay modal-trigger"></div>
+            <div class="modal">
+                <button class="close-modal modal-trigger">X</button>
+                <?php /*foreach ($vehicule as $vehicules) : */?>
+
+                    <h1><?/*= $vehicules['brandVehicle']*/?>  <?/*= $vehicules['modelsVehicle']*/?></h1>
+                <?php /*endforeach */?>
+            </div>
+        </div>-->
+
         <div  class="listeCars">
             <?php foreach ($vehicule as $vehicules) : ?>
             <div class="carContainer">
                 <img class="imgCars" src="<?= $vehicules['imgVehicle']?>" alt="Image du véhicule">
-                <div><?= $vehicules['brandVehicle']?>  <?= $vehicules['modelsVehicle']?></div>
+
+
+                <div class="carInfo">
+                    <div class = "titleCarInfo">
+                        <?= "<h3>Louer une "?><?=$vehicules['brandVehicle']?> <?= $vehicules['modelsVehicle']?><?= " à partir de "?><br>
+                    </div>
+                    <div class="price">
+                        <?= "<H4>varPRIX"?>
+                    </div>
+                    <?= "type : "?><?=$vehicules['rangeVehicle']?> <br> <?= "Places : "?><?= $vehicules['nbseatsVehicle']?><br>
+                    <?= "boite de vitesse : "?><?= $vehicules['gearboxVehicle']?><br>
+                    <div  class="button">
+                    <button  type="submit" name="submit"><a href="">plus de details</a></button>
+                    </div>
+                </div>
             </div>
+
             <?php endforeach ?>
         </div>
 
