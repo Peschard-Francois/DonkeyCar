@@ -1,0 +1,36 @@
+*,
+::before,
+::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.carContainer{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+
+.imgCars{
+
+  width: 300px;
+  height: 200px;
+
+  border: black solid 2px;
+
+
+}
+
+.listeCars{
+  display: flex;
+
+  flex-direction: row;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+}
+

@@ -21,6 +21,7 @@ $vehicule=$results->fetchAll();
        <?php include ('include/header.php') ?>
     </header>
     <body>
+
         <!--<div class="modal-container">
             <div class="overlay modal-trigger"></div>
             <div class="modal">
@@ -32,12 +33,11 @@ $vehicule=$results->fetchAll();
             </div>
         </div>-->
 
-
-
         <div  class="listeCars">
             <?php foreach ($vehicule as $vehicules) : ?>
             <div class="carContainer">
                 <img class="imgCars" src="<?= $vehicules['imgVehicle']?>" alt="Image du véhicule">
+
 
                 <div class="carInfo">
                     <div class = "titleCarInfo">

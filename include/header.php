@@ -20,13 +20,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                        <a class="nav-link active" aria-current="page" href="../public/index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Location</a>
+                        <a class="nav-link active" href="../location.php">Location</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Véhicules</a>
+                        <a class="nav-link active" href="../vehicule.php">Véhicules</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="../form.php">Contact</a>
