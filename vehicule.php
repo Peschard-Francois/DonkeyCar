@@ -33,6 +33,13 @@ $vehicule=$results->fetchAll();
                                 <h4><img alt="" src="./src/css/assets/car-seat-with-seatbelt%20(1).png"> <?= $vehicules['nbseatsVehicle']?></h4>
                                 <h4><img alt="" src="./src/css/assets/gearbox.png"> <?= $vehicules['gearboxVehicle']?></h4><br>
                                 <H4> à partir de : <?=$vehicules['prixLocVehicle']?> €</h4><br>
+                                <a href="location.php?id=<?=$vehicules['idvehicle']?>
+                                &marque=<?=$vehicules['brandVehicle']?>
+                                &modele=<?= $vehicules['modelsVehicle']?>
+                                &type=<?= $vehicules['nameType']?>
+                                &energy=<?=$vehicules['energyVehicle']?>
+                                &seats=<?= $vehicules['nbseatsVehicle']?>
+                                &boiteVitesse=<?= $vehicules['gearboxVehicle']?>"<button>LOUER</button></a>
 
                         </div>
                         </div>
