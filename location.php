@@ -1,6 +1,4 @@
 
-git
-=======
 <?php
 require_once 'database.php';
 $pdo = getPdo();
