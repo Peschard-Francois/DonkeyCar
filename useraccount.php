@@ -16,6 +16,9 @@ include './include/header.php';
 </head>
 
 <body>
+<h1>Menu Profil</h1>
+
+<h2>Bonjour DonkeySchool</h2>
     <div class="d-flex justify-content-evenly">
         <button type="button" class="btn btn-primary btn-lg">Commandes en cours</button>
         <button type="button" class="btn btn-secondary btn-lg">Commandes précédentes</button>

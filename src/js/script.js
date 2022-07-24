@@ -1,9 +1,24 @@
 
-const modalContainer = document.querySelector(".modal-container");
-const modalTriggers = document.querySelectorAll(".modal-trigger");
+/*
+const modalcarInfo = document.querySelector(".carInfo");
+const modalbtnOpen = document.querySelectorAll(".btnOpen");
 
-modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
+modalbtnOpen.forEach(trigger => trigger.addEventListener("click", toggleModal))
 
 function toggleModal(){
-  modalContainer.classList.toggle("active")
+  modalcarInfo.classList.toggle("active")
 }
+*/
+
+
+let ficheTech =document.querySelectorAll(".listeCars");
+ficheTech.forEach((event)=>{
+  event.addEventListener('click',()=>{
+    if(event.classList.contains("active")){
+      event.classList.remove("active");
+    }
+    else{
+      event.classList.add("active");
+    }
+  })
+})
