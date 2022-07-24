@@ -1,7 +1,23 @@
 
 <?php
-require_once 'database.php';
-$pdo = getPdo();
+
+
+
+$idvehicleGet = $_GET['id'] ?? '';
+$marqueGet = $_GET['marque'] ?? '';
+$modeleGet = $_GET['modele'] ?? '';
+$typeGet = $_GET['type'] ?? '';
+$energyGet = $_GET['energy'] ?? '';
+$seatsGet = $_GET['seats'] ?? '';
+$boiteVitesseGet = $_GET['boiteVitesse'] ?? '';
+
+
+
+
+
+
+
+
 ?>
 
 
@@ -29,27 +45,27 @@ $pdo = getPdo();
     <form action="" method="post">
         <div class="mb-3">
             <label for="brand">Marque :</label>
-            <input type="text" class="form-control" id="brand" name="brand" required>
+            <input type="text" value="<?= $marqueGet?>" class="form-control" id="brand" name="brand" required disabled="disabled">
         </div> <br>
         <div class="mb-3">
             <label for="model">Modèle :</label>
-            <input type="text" class="form-control" id="model" name="model" required>
+            <input type="text" value="<?= $modeleGet?>" class="form-control" id="model" name="model" required disabled="disabled">
         </div> <br>
         <div class="mb-3">
             <label for="range">Type :</label>
-            <input type="text" class="form-control" id="range" name="range" required>
+            <input type="text" value="<?= $typeGet?>" class="form-control" id="range" name="range" required disabled="disabled">
         </div> <br>
         <div class="mb-3">
             <label for="energy">Energie :</label>
-            <input type="text" class="form-control" id="energy" name="energy" required>
+            <input type="text" value="<?= $energyGet?>" class="form-control" id="energy" name="energy" required disabled="disabled">
         </div> <br>
         <div class="mb-3">
             <label for="seats">Places :</label>
-            <input type="text" class="form-control" id="seats" name="seats" required>
+            <input type="text" value="<?= $seatsGet?>" class="form-control" id="seats" name="seats" required disabled="disabled">
         </div> <br>
         <div class="mb-3">
             <label for="gearbox">Boite de vitesse :</label>
-            <input type="text" class="form-control" id="gearbox" name="gearbox" required>
+            <input type="text" value="<?= $boiteVitesseGet?>" class="form-control" id="gearbox" name="gearbox" required disabled="disabled">
         </div> <br>
         <div class="mb-3">
             <label for="date1">Du :</label>

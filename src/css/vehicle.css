@@ -50,10 +50,17 @@ h1 {
 
 .carContainer h2 {
   text-align: center;
+  background: black;
+  color: white;
 }
 
 .carContainer {
   margin-right: 10px;
+}
+
+a {
+  background: white;
+  color: red;
 }
 
 /*# sourceMappingURL=vehicle.css.map */
