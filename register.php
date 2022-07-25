@@ -1,17 +1,35 @@
 <?php
-$pdo = require_once './database.php';
+
+require_once './database.php';
+$pdo = getPdo();
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $input = filter_input_array(INPUT_POST, [
         'username' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
         'email' => FILTER_SANITIZE_EMAIL,
+        'lastname' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+        'firstname' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+        'zipcode' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+
     ]);
     $username = $input['username'] ?? '';
-    $password = $_POST['password'] ?? '';
     $email = $input['email'] ?? '';
+    $password = $_POST['password'] ?? '';
 
-    if (!$username || !$password || !$email) {
+    $lastname = $input['lastname'] ?? '';
+    $firstname = $input['firstname'] ?? '';
+    $adress = $_POST['adress'] ?? '';
+    $zipcode = $input['zipcode'] ?? '';
+    $city = $_POST['city'] ?? '';
+    $phone = $_POST['phone'] ?? '';
+
+
+
+
+
+
+    if (!$username || !$password || !$email || !$lastname || !$firstname || !$adress || !$zipcode || !$city || !$phone) {
         $error = 'ERROR';
     } else {
         $hashedPassword = password_hash($password, PASSWORD_ARGON2I);
@@ -19,12 +37,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             DEFAULT,
             :email,
             :username,
-            :password
+            :password,
+            :lastname,
+            :firstname,
+            :adress,    
+            :zipcode, 
+            :city,
+            :phone
         )');
 
         $statement->bindValue(':email', $email);
         $statement->bindValue(':username', $username);
         $statement->bindValue(':password', $hashedPassword);
+        $statement->bindValue(':lastname', $lastname);
+        $statement->bindValue(':firstname', $firstname);
+        $statement->bindValue(':adress', $adress);
+        $statement->bindValue(':zipcode', $zipcode);
+        $statement->bindValue(':city', $city);
+        $statement->bindValue(':phone', $phone);
+
+
 
         $statement->execute();
 
@@ -60,12 +92,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="mb-3">
                 <label for="email">E-mail :</label>
-                <input type="email" class="form-control" id="email" name="user_mail" required>
+                <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <div class="mb-3">
                 <label for="password">Password :</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
+            <div class="mb-3">
+                <label for="lastname">Nom :</label>
+                <input type="text" class="form-control" id="lastname" name="lastname" required>
+            </div>
+            <div class="mb-3">
+                <label for="firstname">Prénom :</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" required>
+            </div>
+            <div class="mb-3">
+                <label for="adress">Adresse :</label>
+                <input type="text" class="form-control" id="adress" name="adress" required>
+            </div>
+            <div class="mb-3">
+                <label for="zipcode">Code Postal :</label>
+                <input type="text" class="form-control" id="zipcode" name="zipcode" required>
+            </div>
+            <div class="mb-3">
+                <label for="city">Ville :</label>
+                <input type="text" class="form-control" id="city" name="city" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone">Téléphone :</label>
+                <input type="text" class="form-control" id="phone" name="phone" required>
+            </div>
+
+
             <?php if ($error) : ?>
                 <h1 style="color: red;"><?= $error ?></h1>
             <?php endif; ?>
