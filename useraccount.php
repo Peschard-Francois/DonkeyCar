@@ -10,6 +10,12 @@ if (!$currentUser) {
 }
 $error = null;
 $success = null;
+$userProfile = $currentUser['username'];
+
+$query = $pdo->query("SELECT * FROM user WHERE username='$userProfile'");
+$username = $query->fetchAll();
+/* var_dump($username);
+die(); */
 
 try {
     if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['lastname'], $_POST['firstname'], $_POST['adress'], $_POST['zipcode'], $_POST['city'], $_POST['phone'])) {
