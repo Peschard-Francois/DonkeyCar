@@ -2,11 +2,39 @@
 
 include './include/header.php';
 $pdo = require_once './isloggedin.php';
-
+$pdo = getPdo();
 $currentUser = isLoggedIn();
 
 if (!$currentUser) {
     header('Location: /login.php');
+}
+$error = null;
+$success = null;
+
+try {
+    if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['lastname'], $_POST['firstname'], $_POST['adress'], $_POST['zipcode'], $_POST['city'], $_POST['phone'])) {
+        $query = $pdo->prepare('UPDATE user SET username = :username, email = :email, password = :password, lastname = :lastname, firstname = :firstname, adress = :adress, zipcode = :zipcode, city = :city, phone = :phone WHERE id = :id');
+        $query->execute([
+            'username' => $_POST['username'],
+            'email' => $_POST['email'],
+            'password' => $_POST['password'],
+            'lastname' => $_POST['lastname'],
+            'firstname' => $_POST['firstname'],
+            'adress' => $_POST['adress'],
+            'city' => $_POST['city'],
+            'zipcode' => $_POST['zipcode'],
+            'phone' => $_POST['phone'],
+            'id' => $_GET['id'],
+        ]);
+        $success = 'Modifications enregistrées!';
+    }
+    $query = getPdo()->prepare('SELECT * FROM user WHERE id = :id');
+    $query->execute([
+        'id' => $_GET['id']
+    ]);
+    $user = $query->fetch();
+} catch (PDOException $e) {
+    $error = $e->getMessage();
 }
 
 ?>
@@ -26,7 +54,47 @@ if (!$currentUser) {
     <h1>Menu Profil</h1>
 
     <h2>Bonjour <?= $currentUser['username'] ?></h2>
-    <div class="d-flex justify-content-evenly">
+
+    <form action="/register.php" method="post">
+        <form method="post">
+            <div class="mb-3">
+                <label for="username">Nom d'utilisateur :</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="email">E-mail :</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="lastname">Nom :</label>
+                <input type="text" class="form-control" id="lastname" name="lastname" required>
+            </div>
+            <div class="mb-3">
+                <label for="firstname">Prénom :</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" required>
+            </div>
+            <div class="mb-3">
+                <label for="adress">Adresse :</label>
+                <input type="text" class="form-control" id="adress" name="adress" required>
+            </div>
+            <div class="mb-3">
+                <label for="zipcode">Code Postal :</label>
+                <input type="text" class="form-control" id="zipcode" name="zipcode" required>
+            </div>
+            <div class="mb-3">
+                <label for="city">Ville :</label>
+                <input type="text" class="form-control" id="city" name="city" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone">Téléphone :</label>
+                <input type="text" class="form-control" id="phone" name="phone" required>
+            </div>
+            <div class="button">
+                <button type="submit" class="btn btn-primary">Sauvegarder</button>
+            </div>
+        </form>
+
+        <!-- <div class="d-flex justify-content-evenly">
         <button type="button" class="btn btn-primary btn-lg">Commandes en cours</button>
         <button type="button" class="btn btn-secondary btn-lg">Commandes précédentes</button>
     </div>
@@ -64,7 +132,7 @@ if (!$currentUser) {
                 <a href="#" class="card-link">Détails</a>
                 <a href="#" class="card-link">Réclammation</a>
             </div>
-        </div>
+        </div> -->
 </body>
 
 </html>
