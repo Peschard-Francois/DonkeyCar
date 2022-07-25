@@ -1,7 +1,7 @@
 <?php
 
 include('database.php');
-include('isloggedin.php');
+require_once 'isloggedin.php';
 
 $currentUser = isLoggedIn();
 
