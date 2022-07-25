@@ -11,7 +11,7 @@ function toggleModal(){
 */
 
 
-let ficheTech =document.querySelectorAll(".listeCars");
+let ficheTech =document.querySelectorAll(".carContainer");
 ficheTech.forEach((event)=>{
   event.addEventListener('click',()=>{
     if(event.classList.contains("active")){

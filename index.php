@@ -69,13 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 foreach ($searchCars as $searchCar) : ?>
                     <h3>Vehicule Libre</h3><?= $searchCar['idvehicle'] ?> <?= $searchCar['brandVehicle'] ?>
                 <?php endforeach ?>
-
-            </select>
-            <input name="depart" id="departure" type="date" placeholder="du">
-            <input name="arrive" id="arrival" type="date">
-            <button type="submit">Rechercher</button>
-        </form>
-    </div>
+          <?php  }?>
+        </div>
 </body>
 
 </html>
