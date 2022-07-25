@@ -4,32 +4,29 @@ $pdo = getPdo();
 $results = $pdo->query('SELECT * FROM type');
 $type=$results->fetchAll();
 
-$idPost = $_POST['type'] ?? '';
-$departPost = $_POST['depart'] ?? '';
-$arrivePost = $_POST['arrive'] ?? '';
-
-$pdo = getPdo();
-$results = $pdo->query("SELECT * FROM vehicle INNER JOIN type ON vehicle.type_idtype = type.idtype WHERE type_idtype = '$idPost' ");
-$searchCar=$results->fetchAll();
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
+    $idPost = $_POST['type'] ?? '';
+    $departPost = $_POST['depart'] ?? '';
+    $arrivePost = $_POST['arrive'] ?? '';
 
-$pdo = getPdo();
-$results = $pdo->query("SELECT dateReservationDebut,vehicle_idvehicle,dateReservationFin FROM bd_donkeycar.reservation;");
-$dateReservation = $results->fetchAll();
 
+    $statement =  $pdo->prepare("SELECT * FROM vehicle INNER JOIN type ON vehicle.type_idtype = type.idtype WHERE type_idtype = '$idPost' AND vehicle.idvehicle NOT IN (
+    SELECT vehicle_idvehicle FROM reservation WHERE :datePost BETWEEN dateReservationDebut AND dateReservationFin AND :arrivePost BETWEEN dateReservationDebut AND reservation.dateReservationFin);");
+    $statement->bindValue(':datePost', $departPost, PDO::PARAM_STR);
+    $statement->bindValue(':arrivePost', $arrivePost, PDO::PARAM_STR);
+    $statement->execute();
+    $searchCars = $statement->fetchAll();
 
-$singleArray = [];
-foreach ($dateReservation as $childArray)
-{
-    foreach ($childArray as $value)
-    {
-        $singleArray[] = $value;
-    }
 }
-/*var_dump($singleArray);
 
-*/?>
+
+
+
+
+
+?>
 
 
 
@@ -70,23 +67,15 @@ foreach ($dateReservation as $childArray)
 
     <div  class="listeCars">
 
-       <!-- --><?php /*var_dump($singleArray[0]);
-
-        */?>
-            <?php foreach ($searchCar as $searchCars) : ?>
-                     <?php foreach ($dateReservation as $dateReservations) : ?>
-                            <?php if ($departPost < $dateReservations['dateReservationDebut']  AND $departPost > $dateReservations['dateReservationFin'] AND $dateReservations['vehicle_idvehicle'] === $searchCars['idvehicle'] ) :?>
-                             <h3>Vehicule Libre</h3><?= $searchCars['idvehicle']?> <?= $searchCars['brandVehicle']?>
-
-
-                    <?php endif ?>
-                <?php endforeach ?>
+        <?php  if($_SERVER['REQUEST_METHOD'] === 'POST') {
+             foreach ($searchCars as $searchCar) : ?>
+                             <h3>Vehicule Libre</h3><?= $searchCar['idvehicle']?> <?= $searchCar['brandVehicle']?>
             <?php endforeach ?>
+      <?php  } ?><?php
 
 
 
 
-    <?= $arrivePost?>
     </div>
 </body>
 </html>
