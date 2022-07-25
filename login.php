@@ -15,14 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!$password || !$email) {
         $error = 'ERROR';
     } else {
-        $statementUser = $pdo->prepare('SELECT * FROM user WHERE email=:email');
+        $statementUser = getPdo()->prepare('SELECT * FROM user WHERE email=:email');
         $statementUser->bindValue(':email', $email);
         $statementUser->execute();
         $user = $statementUser->fetch();
 
         if (password_verify($password, $user['password'])) {
             $sessionId = bin2hex(random_bytes(32));
-            $statementSession = $pdo->prepare('INSERT INTO session VALUES (:sessionid, :userid )');
+            $statementSession = getPdo()->prepare('INSERT INTO session VALUES (:sessionid, :userid )');
             $statementSession->bindValue(':userid', $user['id']);
             $statementSession->bindValue(':sessionid', $sessionId);
             $statementSession->execute();
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="post">
         <div class="mb-3">
             <label for="email">E-mail :</label>
-            <input type="email" class="form-control" id="email" name="user_mail" required>
+            <input type="email" class="form-control" id="email" name="email" required>
         </div>
         <div class="mb-3">
             <label for="password">Password :</label>

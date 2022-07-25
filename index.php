@@ -1,5 +1,7 @@
 <?php
+
 include('database.php');
+include('isloggedin.php');
 
 $currentUser = isLoggedIn();
 
