@@ -3,11 +3,13 @@
 include('database.php');
 require_once 'isloggedin.php';
 
+
 $currentUser = isLoggedIn();
 
 $pdo = getPdo();
 $results = $pdo->query('SELECT * FROM type');
 $type = $results->fetchAll();
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $idPost = $_POST['type'] ?? '';
@@ -67,10 +69,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 foreach ($searchCars as $searchCar) : ?>
                     <h3>Vehicule Libre</h3><?= $searchCar['idvehicle'] ?> <?= $searchCar['brandVehicle'] ?>
                 <?php endforeach ?>
-            <?php  } ?>
 
-        </div>
-
+            </select>
+            <input name="depart" id="departure" type="date" placeholder="du">
+            <input name="arrive" id="arrival" type="date">
+            <button type="submit">Rechercher</button>
+        </form>
+    </div>
 </body>
 
 </html>
