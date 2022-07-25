@@ -4,34 +4,19 @@ $pdo = getPdo();
 $results = $pdo->query('SELECT * FROM type');
 $type=$results->fetchAll();
 
-$idPost = $_POST['type'] ?? '';
-$departPost = $_POST['depart'] ?? '';
-$arrivePost = $_POST['arrive'] ?? '';
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $idPost = $_POST['type'] ?? '';
+    $departPost = $_POST['depart'] ?? '';
+    $arrivePost = $_POST['arrive'] ?? '';
 
-$pdo = getPdo();
-$results = $pdo->query("SELECT * FROM vehicle INNER JOIN type ON vehicle.type_idtype = type.idtype WHERE type_idtype = '$idPost' ");
-$searchCar=$results->fetchAll();
-
-
-
-$pdo = getPdo();
-$results = $pdo->query("SELECT dateReservationDebut,vehicle_idvehicle,dateReservationFin FROM bd_donkeycar.reservation;");
-$dateReservation = $results->fetchAll();
-
-
-$singleArray = [];
-foreach ($dateReservation as $childArray)
-{
-    foreach ($childArray as $value)
-    {
-        $singleArray[] = $value;
-    }
+    $statement =  $pdo->prepare("SELECT * FROM vehicle INNER JOIN type ON vehicle.type_idtype = type.idtype WHERE type_idtype = '$idPost' AND vehicle.idvehicle NOT IN (
+    SELECT vehicle_idvehicle FROM reservation WHERE :datePost BETWEEN dateReservationDebut AND dateReservationFin AND :arrivePost BETWEEN dateReservationDebut AND reservation.dateReservationFin);");
+    $statement->bindValue(':datePost', $departPost, PDO::PARAM_STR);
+    $statement->bindValue(':arrivePost', $arrivePost, PDO::PARAM_STR);
+    $statement->execute();
+    $searchCars = $statement->fetchAll();
 }
-/*var_dump($singleArray);
-
-*/?>
-
-
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,9 +33,14 @@ foreach ($dateReservation as $childArray)
 </header>
 <body>
 
+
 <h1><span>Donkey</span><span>Car</span></h1>
     <h4><span>roulez </span><span>comme </span><span>vous </span><span>êtes</span></h4>
     <div class= "researchZone">
+=======
+    <h1>Welcome to Donkey Car Rent Online</h1>
+    <div>
+
         <form action="" method="POST">
             <select name="type" id="typ">
                 <option value="">Veuillez choisir un type de vehicule</option>  
@@ -61,19 +51,23 @@ foreach ($dateReservation as $childArray)
             <input name="depart" id="departure" type="date" placeholder="du">
             <input name="arrive" id="arrival" type="date">
             <button type="submit">Rechercher</button>
-
         </form>
     </div>
-
-
-
     <div  class="listeCars">
+
         <?php foreach ($searchCar as $searchCars) : ?>
             <div class="carContainer">
                 <img class="imgCars" src="<?= $searchCars['imgVehicle']?>" alt="Image du véhicule">
                 <div class="carInfo"><?= $searchCars['brandVehicle']?>  <?= $searchCars['modelsVehicle']?></div>
             </div>
         <?php endforeach ?>
+=======
+        <?php  if($_SERVER['REQUEST_METHOD'] === 'POST') {
+             foreach ($searchCars as $searchCar) : ?>
+                 <h3>Vehicule Libre</h3><?= $searchCar['idvehicle']?> <?= $searchCar['brandVehicle']?>
+             <?php endforeach ?>
+        <?php  } ?>
+
     </div>
 
 </body>
