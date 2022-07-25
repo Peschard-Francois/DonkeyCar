@@ -48,7 +48,6 @@ $currentUser = isLoggedIn();
                             <a class="nav-link active" href="/login.php">Connexion</a>
                             <a class="nav-link active" href="/register.php">S'enregistrer</a>
                         <?php endif; ?>
-
                         </li>
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0">
