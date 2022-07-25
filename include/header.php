@@ -46,7 +46,7 @@ $currentUser = isLoggedIn();
                 <?php if ($currentUser) : ?>
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="/useraccount.php">Profile</a>
+                            <a class="nav-link active" href="/useraccount.php">Profil</a>
                             <a class="nav-link active" href="/logout.php">Déconnexion</a>
                         <?php else : ?>
                             <a class="nav-link active" href="/login.php">Connexion</a>

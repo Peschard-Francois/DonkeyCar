@@ -7,13 +7,7 @@ $pdo = getPdo();
 $results = $pdo->query('SELECT * FROM type');
 $type = $results->fetchAll();
 
-<<<<<<< HEAD
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-
-=======
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
->>>>>>> 76e010ab7836313af85f41709695c6abca01c4e7
     $idPost = $_POST['type'] ?? '';
     $departPost = $_POST['depart'] ?? '';
     $arrivePost = $_POST['arrive'] ?? '';
@@ -25,10 +19,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $statement->execute();
     $searchCars = $statement->fetchAll();
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 76e010ab7836313af85f41709695c6abca01c4e7
 ?>
 
 <!DOCTYPE html>
@@ -49,45 +40,34 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 
-<h1><span>Donkey</span><span>Car</span></h1>
+    <h1><span>Donkey</span><span>Car</span></h1>
     <h4><span>roulez </span><span>comme </span><span>vous </span><span>êtes</span></h4>
-    <div class= "researchZone">
+    <div class="researchZone">
 
-    <div>
+        <div>
 
-        <form action="" method="POST">
-            <select name="type" id="typ">
-                <option value="">Veuillez choisir un type de vehicule</option>  
-                <?php foreach ($type as $types) : ?>
-                    <option value="<?= $types['idtype'] ?>"><?= $types['nameType'] ?></option>
+            <form action="" method="POST">
+                <select name="type" id="typ">
+                    <option value="">Veuillez choisir un type de vehicule</option>
+                    <?php foreach ($type as $types) : ?>
+                        <option value="<?= $types['idtype'] ?>"><?= $types['nameType'] ?></option>
+                    <?php endforeach ?>
+                </select>
+                <input name="depart" id="departure" type="date" placeholder="du">
+                <input name="arrive" id="arrival" type="date">
+                <button type="submit">Rechercher</button>
+            </form>
+        </div>
+        <div class="listeCars">
+
+
+            <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                foreach ($searchCars as $searchCar) : ?>
+                    <h3>Vehicule Libre</h3><?= $searchCar['idvehicle'] ?> <?= $searchCar['brandVehicle'] ?>
                 <?php endforeach ?>
-            </select>
-            <input name="depart" id="departure" type="date" placeholder="du">
-            <input name="arrive" id="arrival" type="date">
-            <button type="submit">Rechercher</button>
-        </form>
-    </div>
-<<<<<<< HEAD
+            <?php  } ?>
 
-    <div class="listeCars">
-
-        <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            foreach ($searchCars as $searchCar) : ?>
-                <h3>Vehicule Libre</h3><?= $searchCar['idvehicle'] ?> <?= $searchCar['brandVehicle'] ?>
-            <?php endforeach ?>
-        <?php  } ?>
-=======
-    <div  class="listeCars">
-
-
-        <?php  if($_SERVER['REQUEST_METHOD'] === 'POST') {
-             foreach ($searchCars as $searchCar) : ?>
-                 <h3>Vehicule Libre</h3><?= $searchCar['idvehicle']?> <?= $searchCar['brandVehicle']?>
-             <?php endforeach ?>
-        <?php  } ?>
-
->>>>>>> 76e010ab7836313af85f41709695c6abca01c4e7
-    </div>
+        </div>
 
 </body>
 
