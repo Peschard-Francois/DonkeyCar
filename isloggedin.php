@@ -1,8 +1,10 @@
 <?php
 
+require_once './database.php';
+
 function isLoggedIn()
 {
-    $pdo = require_once './database.php';
+    $pdo = getPdo();
     $sessionId = $_COOKIE['session'] ?? '';
     $signature = $_COOKIE['signature'] ?? '';
 
