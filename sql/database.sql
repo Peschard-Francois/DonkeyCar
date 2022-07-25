@@ -7,12 +7,11 @@ VALUES
 ('Coupé');
 
 
-
-INSERT INTO `client` (lastnameClient,firstnameClient,adressClient,cityClient,zipcodeClient,phoneClient,mailClient)
+INSERT INTO `user` (email,username,password,lastname,firstname,adress,city,zipcode,phone)
 VALUES
-('Peschard-Glenard','François','158 Rue de Paris','Les Lilas','93260',0123456789,'francoisd@gmail.com'),
-('Mbappe','Kylian','100 rue de Versailles','Paris','75016',0198765432,'mbapped@gmail.com'),
-('Robert','Jean','16 avenue de monQ','Paris','75019',0132659874,'jrobert@gmail.com');
+('francoisd@gmail.com','franco','123','Peschard-Glenard','François','158 Rue de Paris','Les Lilas','93260',0123456789),
+('mbapped@gmail.com','mb','123','Mbappe','Kylian','100 rue de Versailles','Paris','75016',0198765432),
+('jrobert@gmail.com','jr','123','Robert','Jean','16 avenue de monQ','Paris','75019',0132659874);
 
 INSERT INTO `vehicle` (brandVehicle,modelsVehicle,energyVehicle,yearVehicle,nbseatsVehicle,gearboxVehicle,imgVehicle,prixLocVehicle,type_idtype)
 VALUES
@@ -27,7 +26,7 @@ VALUES
 ('Fiat','500','Essence','2022-01-01',5,'Manuelle','https://sf1.auto-moto.com/wp-content/uploads/sites/9/2014/12/EG1C6264-750x410.jpg',50,1);
 
 
-INSERT INTO `reservation` (dateReservationDebut,dateReservationFin,insuranceReservation,adddriverReservation,babyseatReservation,gpsReservation,vehicle_idvehicle,client_idclient)
+INSERT INTO `reservation` (dateReservationDebut,dateReservationFin,insuranceReservation,adddriverReservation,babyseatReservation,gpsReservation,vehicle_idvehicle,user_id)
 VALUES
 ('2022-10-10','2022-10-20','Oui','Non','Non','Oui',1,1),
 ('2022-12-10','2022-12-25','Oui','Non','Non','Oui',3,3),
