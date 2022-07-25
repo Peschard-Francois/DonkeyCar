@@ -5,12 +5,9 @@ $results = $pdo->query('SELECT * FROM type');
 $type=$results->fetchAll();
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-
     $idPost = $_POST['type'] ?? '';
     $departPost = $_POST['depart'] ?? '';
     $arrivePost = $_POST['arrive'] ?? '';
-
 
     $statement =  $pdo->prepare("SELECT * FROM vehicle INNER JOIN type ON vehicle.type_idtype = type.idtype WHERE type_idtype = '$idPost' AND vehicle.idvehicle NOT IN (
     SELECT vehicle_idvehicle FROM reservation WHERE :datePost BETWEEN dateReservationDebut AND dateReservationFin AND :arrivePost BETWEEN dateReservationDebut AND reservation.dateReservationFin);");
@@ -18,17 +15,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $statement->bindValue(':arrivePost', $arrivePost, PDO::PARAM_STR);
     $statement->execute();
     $searchCars = $statement->fetchAll();
-
 }
-
-
-
-
-
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +31,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php include('include/header.php') ?>
 </header>
 <body>
-
     <h1>Welcome to Donkey Car Rent Online</h1>
     <div>
         <form action="" method="POST">
@@ -59,23 +46,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="arrival">au</label>
             <input name="arrive" id="arrival" type="date">
             <button type="submit">Rechercher</button>
-
         </form>
     </div>
-
-
-
     <div  class="listeCars">
-
         <?php  if($_SERVER['REQUEST_METHOD'] === 'POST') {
              foreach ($searchCars as $searchCar) : ?>
-                             <h3>Vehicule Libre</h3><?= $searchCar['idvehicle']?> <?= $searchCar['brandVehicle']?>
-            <?php endforeach ?>
-      <?php  } ?><?php
-
-
-
-
+                 <h3>Vehicule Libre</h3><?= $searchCar['idvehicle']?> <?= $searchCar['brandVehicle']?>
+             <?php endforeach ?>
+        <?php  } ?>
     </div>
 </body>
 </html>

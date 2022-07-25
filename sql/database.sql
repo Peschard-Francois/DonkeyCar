@@ -6,18 +6,13 @@ VALUES
 ('Cabriolet'),
 ('Coupé');
 
-INSERT INTO `user` (nameUser,passwordUser)
-VALUES
-('Franco','test'),
-('Mbappe','test'),
-('Robert','test');
 
 
-INSERT INTO `client` (lastnameClient,firstnameClient,adressClient,cityClient,zipcodeClient,phoneClient,mailClient,user_iduser)
+INSERT INTO `client` (lastnameClient,firstnameClient,adressClient,cityClient,zipcodeClient,phoneClient,mailClient)
 VALUES
-('Peschard-Glenard','François','158 Rue de Paris','Les Lilas','93260',0123456789,'francoisd@gmail.com',1),
-('Mbappe','Kylian','100 rue de Versailles','Paris','75016',0198765432,'mbapped@gmail.com',2),
-('Robert','Jean','16 avenue de monQ','Paris','75019',0132659874,'jrobert@gmail.com',3);
+('Peschard-Glenard','François','158 Rue de Paris','Les Lilas','93260',0123456789,'francoisd@gmail.com'),
+('Mbappe','Kylian','100 rue de Versailles','Paris','75016',0198765432,'mbapped@gmail.com'),
+('Robert','Jean','16 avenue de monQ','Paris','75019',0132659874,'jrobert@gmail.com');
 
 INSERT INTO `vehicle` (brandVehicle,modelsVehicle,energyVehicle,yearVehicle,nbseatsVehicle,gearboxVehicle,imgVehicle,prixLocVehicle,type_idtype)
 VALUES
