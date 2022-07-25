@@ -1,10 +1,13 @@
 <?php
 include('database.php');
+
+$currentUser = isLoggedIn();
+
 $pdo = getPdo();
 $results = $pdo->query('SELECT * FROM type');
-$type=$results->fetchAll();
+$type = $results->fetchAll();
 
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     $idPost = $_POST['type'] ?? '';
@@ -18,20 +21,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $statement->bindValue(':arrivePost', $arrivePost, PDO::PARAM_STR);
     $statement->execute();
     $searchCars = $statement->fetchAll();
-
 }
-
-
-
-
-
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,6 +38,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 <header>
     <?php include('include/header.php') ?>
 </header>
+
 <body>
 
     <h1>Welcome to Donkey Car Rent Online</h1>
@@ -63,19 +60,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
 
+    <div class="listeCars">
 
-
-    <div  class="listeCars">
-
-        <?php  if($_SERVER['REQUEST_METHOD'] === 'POST') {
-             foreach ($searchCars as $searchCar) : ?>
-                             <h3>Vehicule Libre</h3><?= $searchCar['idvehicle']?> <?= $searchCar['brandVehicle']?>
+        <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            foreach ($searchCars as $searchCar) : ?>
+                <h3>Vehicule Libre</h3><?= $searchCar['idvehicle'] ?> <?= $searchCar['brandVehicle'] ?>
             <?php endforeach ?>
-      <?php  } ?><?php
-
-
-
-
+        <?php  } ?>
     </div>
 </body>
+
 </html>

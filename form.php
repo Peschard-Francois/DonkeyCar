@@ -1,6 +1,7 @@
 <?php
 
 include './include/header.php';
+$currentUser = isLoggedIn();
 
 ?>
 
