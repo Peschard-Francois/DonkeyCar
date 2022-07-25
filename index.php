@@ -1,10 +1,19 @@
 <?php
 include('database.php');
+
+$currentUser = isLoggedIn();
+
 $pdo = getPdo();
 $results = $pdo->query('SELECT * FROM type');
-$type=$results->fetchAll();
+$type = $results->fetchAll();
 
+<<<<<<< HEAD
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
+=======
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
+>>>>>>> 76e010ab7836313af85f41709695c6abca01c4e7
     $idPost = $_POST['type'] ?? '';
     $departPost = $_POST['depart'] ?? '';
     $arrivePost = $_POST['arrive'] ?? '';
@@ -16,10 +25,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $statement->execute();
     $searchCars = $statement->fetchAll();
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 76e010ab7836313af85f41709695c6abca01c4e7
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,6 +45,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 <header>
     <?php include('include/header.php') ?>
 </header>
+
 <body>
 
 
@@ -52,6 +67,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Rechercher</button>
         </form>
     </div>
+<<<<<<< HEAD
+
+    <div class="listeCars">
+
+        <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            foreach ($searchCars as $searchCar) : ?>
+                <h3>Vehicule Libre</h3><?= $searchCar['idvehicle'] ?> <?= $searchCar['brandVehicle'] ?>
+            <?php endforeach ?>
+        <?php  } ?>
+=======
     <div  class="listeCars">
 
 
@@ -61,7 +86,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
              <?php endforeach ?>
         <?php  } ?>
 
+>>>>>>> 76e010ab7836313af85f41709695c6abca01c4e7
     </div>
 
 </body>
+
 </html>
