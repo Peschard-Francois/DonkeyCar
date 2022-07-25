@@ -37,8 +37,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 <h1><span>Donkey</span><span>Car</span></h1>
     <h4><span>roulez </span><span>comme </span><span>vous </span><span>êtes</span></h4>
     <div class= "researchZone">
-=======
-    <h1>Welcome to Donkey Car Rent Online</h1>
+
     <div>
 
         <form action="" method="POST">
@@ -55,13 +54,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     <div  class="listeCars">
 
-        <?php foreach ($searchCar as $searchCars) : ?>
-            <div class="carContainer">
-                <img class="imgCars" src="<?= $searchCars['imgVehicle']?>" alt="Image du véhicule">
-                <div class="carInfo"><?= $searchCars['brandVehicle']?>  <?= $searchCars['modelsVehicle']?></div>
-            </div>
-        <?php endforeach ?>
-=======
+
         <?php  if($_SERVER['REQUEST_METHOD'] === 'POST') {
              foreach ($searchCars as $searchCar) : ?>
                  <h3>Vehicule Libre</h3><?= $searchCar['idvehicle']?> <?= $searchCar['brandVehicle']?>
