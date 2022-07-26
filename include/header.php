@@ -36,7 +36,7 @@ $currentUser = isLoggedIn();
                         <a class="nav-link active" href="../vehicule.php">Véhicules</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../form.php">Contact</a>
+                        <a class="nav-link active" href="../contact.php">Contact</a>
                     </li>
                 </ul>
                 <?php if ($currentUser) : ?>
