@@ -14,10 +14,14 @@ $currentUser = isLoggedIn();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire de contact</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/src/css/style.css">
 
 </head>
 
 <body>
+<div class="d-flex justify-content-center">
+        <h1>Restons en contact</h1>
+    </div>
     <form action="formresult.php" method="post">
         <div class="mb-3">
             <label for="lname">Nom :</label>
@@ -43,6 +47,9 @@ $currentUser = isLoggedIn();
             <button type="submit" class="btn btn-primary">Envoyer votre message</button>
         </div>
     </form>
+ <Footer>
+    <?php include './include/footer.php'; ?>
+ </footer>
 </body>
 
 </html>

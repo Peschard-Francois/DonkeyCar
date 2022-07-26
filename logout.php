@@ -29,7 +29,9 @@ if ($sessionId) {
 </head>
 
 <body>
-
+<Footer>
+    <?php include './include/footer.php'; ?>
+ </footer>
 </body>
 
 </html>
