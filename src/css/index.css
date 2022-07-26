@@ -74,6 +74,7 @@ color: aliceblue;
   background-color: rgba(0, 0, 0, 0.829);
 }
 .carInfo{
+  border-radius: 10px 10px 0px 0px;
   width: 600px;
   height: 100px;
   border: black solid 1px;
