@@ -6,158 +6,112 @@
   padding: 0;
 }
 
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #F1F1F1;
+}
+
 body {
-  background : #333;
-  background: url(/car-3531147_960_720.jpg);
+  background: #333;
+  background: url(assets/porsche-1851246__340.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
   font-size: 100px;
   text-align: center;
-  padding-top: 200px;
+  padding-top: 20px;
   text-transform: uppercase;
-  color: #f1f1f1;
- 
 }
 
-h1 span{
-  position: relative;
-  color: #f1f1f1;
+.mb-3 {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-
-h4 {
-text-align: center;
-color: #f1f1f1;
-}
-
-
-.researchZone {
-text-align: center;
-padding-top: 80px;
-}
-
-/*
-.modal-btn{
-  padding: 10px 14px;
-  font-size: 18px;
-  margin: 100px auto;
-  display: block;
-  min-width: 150px;
-  cursor: pointer;
-}
-.modal-container{
-  display: none;
-  position:fixed;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-}
-.modal-container.active {
-display: block;
-}
-
-.overlay{
-  position :absolute;
-  width: 100%;
-  height: 100%;
-  background: #333333d3;
-}
-
-.modal{
-  width: 95%;
-  max-width: 500px;
-  min-width: 300px;
-  padding: 30px;
-  background: aliceblue;
-  border-radius: 5px;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-}
-
-.close-modal{
-  padding: 8px 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  position :absolute;
-  top: 10px;
-  right: 10px;
-  cursor:pointer;
-  background: red;
-  color: white;
-}
-.modal h1{
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
-.modal p{
-  line-height: 1.4;
-  margin-bottom: 5px;
-}
-*/
-.carContainer {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction:row;
-  margin-left: 15%;
-}
-
 
 .button {
-  text-align: right;
-  margin-right: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
 }
 
-.titleCarInfo{
-  color: rgb(117, 117, 117);
-}
-
-.imgCars, .carInfo{
-  width: 500px;
-  height: 300px;
-  border: black solid 1px;
-  margin: 60px 0px 0px ;
-  background-color: rgba(1, 1, 68, 0.829);
-}
-.price {
-  text-align: right;
-}
-.carInfo{
-  padding-top: 2%;
-  padding-left: 2%;
-  width: 600px;
-  height: 300px;
-  color:darkgray;
-}
-.listeCars {
-  /*display: flex;*/
-  flex-direction: row;
-  align-items: center;
-  height: 200px;
+button {
   width: 100%;
 }
 
-/*# sourceMappingURL=style.css.map */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  background-image: url("./assets/road-forest.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-/*
-.carContainer{
+h1 {
+  text-align: center;
+  margin-right: 10px;
+}
+
+.imgCars {
+  width: 300px;
+  height: 200px;
+  border: black solid 2px;
+}
+
+.listeCars {
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  max-width: 100%;
+  cursor: pointer;
+  padding: 30px;
 }
-*/
-/*
 
+.carInfo {
+  display: none;
+  text-align: center;
+  color: white;
+  background-size: contain;
+  background: url("../css/assets/1464.jpg") no-repeat;
+  padding: 5px;
+  border: 1px solid black;
+  margin-bottom: 280px;
+}
 
-*/
+.carContainer.active .carInfo {
+  display: block;
+}
+
+.carContainer h2 {
+  text-align: center;
+  background: black;
+  color: white;
+}
+
+.carContainer {
+  margin-right: 10px;
+}
+
+a {
+  background: white;
+  color: red;
+}
 
 /*# sourceMappingURL=style.css.map */

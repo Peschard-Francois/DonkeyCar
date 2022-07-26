@@ -1,0 +1,70 @@
+*,
+::before,
+::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-image: url("./assets/road-forest.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1{
+  text-align: center;
+  margin-right: 10px;
+}
+
+.imgCars{
+
+  width: 300px;
+  height: 200px;
+  border: black solid 2px;
+}
+
+.listeCars{
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 200px;
+  max-width: 100%;
+  cursor: pointer;
+  padding: 30px;
+
+
+}
+.carInfo{
+  display: none;
+  text-align: center;
+  color: white;
+  background-size: contain;
+  background: url("../css/assets/1464.jpg") no-repeat;
+  padding: 5px;
+  border: 1px solid black;
+  margin-bottom: 280px;
+
+}
+
+.carContainer.active .carInfo{
+  display: block;
+
+}
+
+.carContainer h2{
+  text-align: center;
+  background: black;
+  color: white;
+}
+
+.carContainer{
+  margin-right: 10px;
+
+}
+
+a{
+  background: white;
+  color: red;
+}
