@@ -2,7 +2,7 @@
 include ('database.php');
 $pdo = getPdo();
 $results = $pdo->query('SELECT * FROM vehicle INNER JOIN type ON vehicle.type_idtype = type.idtype;');
-$vehicule=$results->fetchAll();
+$vehicules=$results->fetchAll();
 ?>
 
 
@@ -23,23 +23,17 @@ $vehicule=$results->fetchAll();
     <body>
         <h1>PRESENTATION DES VEHICULES </h1>
         <div  class="listeCars">
-                <?php foreach ($vehicule as $vehicules) : ?>
+                <?php foreach ($vehicules as $vehicule) : ?>
                         <div class="carContainer">
-                                <h2><?=$vehicules['brandVehicle']?> <?= $vehicules['modelsVehicle']?></h2>
-                                <img class="imgCars" src="<?= $vehicules['imgVehicle']?>" alt="Image du véhicule">
+                                <h2><?=$vehicule['brandVehicle']?> <?= $vehicule['modelsVehicle']?></h2>
+                                <img class="imgCars" src="<?= $vehicule['imgVehicle']?>" alt="Image du véhicule">
                         <div class="carInfo">
-                                <h3><?=$vehicules['brandVehicle']?> <?= $vehicules['modelsVehicle']?></h3><br>
-                                <h4> <?= $vehicules['nameType']?></h4>
-                                <h4><img alt="" src="./src/css/assets/car-seat-with-seatbelt%20(1).png"> <?= $vehicules['nbseatsVehicle']?></h4>
-                                <h4><img alt="" src="./src/css/assets/gearbox.png"> <?= $vehicules['gearboxVehicle']?></h4><br>
-                                <H4> à partir de : <?=$vehicules['prixLocVehicle']?> €</h4><br>
-                                <a href="location.php?id=<?=$vehicules['idvehicle']?>
-                                &marque=<?=$vehicules['brandVehicle']?>
-                                &modele=<?= $vehicules['modelsVehicle']?>
-                                &type=<?= $vehicules['nameType']?>
-                                &energy=<?=$vehicules['energyVehicle']?>
-                                &seats=<?= $vehicules['nbseatsVehicle']?>
-                                &boiteVitesse=<?= $vehicules['gearboxVehicle']?>"<button>LOUER</button></a>
+                                <h3><?=$vehicule['brandVehicle']?> <?= $vehicule['modelsVehicle']?></h3><br>
+                                <h4> <?= $vehicule['nameType']?></h4>
+                                <h4><img alt="" src="./src/css/assets/car-seat-with-seatbelt%20(1).png"> <?= $vehicule['nbseatsVehicle']?></h4>
+                                <h4><img alt="" src="./src/css/assets/gearbox.png"> <?= $vehicule['gearboxVehicle']?></h4><br>
+                                <H4> à partir de : <?=$vehicule['prixLocVehicle']?> €</h4><br>
+
 
                         </div>
                         </div>

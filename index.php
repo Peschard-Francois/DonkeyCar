@@ -55,10 +55,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <option value="">Veuillez choisir un type de vehicule</option>
                     <?php foreach ($type as $types) : ?>
                         <option value="<?= $types['idtype'] ?>"><?= $types['nameType'] ?></option>
+
                     <?php endforeach ?>
                 </select>
-                <input name="depart" id="departure" type="date" placeholder="du">
-                <input name="arrive" id="arrival" type="date">
+                <input name="depart" id="departure" type="date"  min="2022-07-25" placeholder="du">
+                <input name="arrive" id="arrival" type="date" min="2022-07-25" >
                 <button type="submit">Rechercher</button>
             </form>
         </div>
@@ -68,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 foreach ($searchCars as $searchCar) : ?>
                     <h3>Vehicule Libre</h3><?= $searchCar['idvehicle'] ?> <?= $searchCar['brandVehicle'] ?>
+                    <a href="location.php?id=<?=$searchCar['idvehicle']?>&marque=<?=$searchCar['brandVehicle']?>&modele=<?= $searchCar['modelsVehicle']?>&type=<?= $searchCar['nameType']?>&energy=<?=$searchCar['energyVehicle']?>&seats=<?= $searchCar['nbseatsVehicle']?>&boiteVitesse=<?= $searchCar['gearboxVehicle']?>&datedepart=<?=$departPost?>&datefin=<?=$arrivePost?>"<button>LOUER</button></a>
                 <?php endforeach ?>
           <?php  }?>
         </div>
