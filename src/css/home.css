@@ -5,10 +5,13 @@
   margin: 0;
   padding: 0;
 }
+header {
+  position: sticky;
+}
 
 body {
   background : #333;
-  background: url(/car-3531147_960_720.jpg);
+  background: url(assets/car-3531147_960_720.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
