@@ -63,11 +63,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </div>
         <div class="listeCars">
-
-
             <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 foreach ($searchCars as $searchCar) : ?>
-                    <h3>Vehicule Libre</h3><?= $searchCar['idvehicle'] ?> <?= $searchCar['brandVehicle'] ?>
+                    <div class="carInfo">
+                    <h3 class="titleCarInfo">Vehicule Libre</h3>
+                    <?= $searchCar['brandVehicle'] ?>  <?= $searchCar['modelsVehicle'] ?>
+                    </div>
+                    <img class="imgCars" src="<?= $searchCar['imgVehicle'] ?>" alt=" image voiture" ><br>
                 <?php endforeach ?>
           <?php  }?>
         </div>
