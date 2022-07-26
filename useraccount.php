@@ -137,6 +137,12 @@ $reservationalls = $query->fetchAll();
         <?php endforeach ?>
     </div>
 
+            <?php endforeach ?>
+        </div>
+        <Footer>
+    <?php include './include/footer.php'; ?>
+ </footer>
+
 </body>
 
 </html>

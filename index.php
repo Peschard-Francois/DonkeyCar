@@ -85,7 +85,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <?php  } ?>
                 </div>
             </div>
-    </section>
+
+ <Footer>
+    
+ </footer>
+
 </body>
 
 </html>
