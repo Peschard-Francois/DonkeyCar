@@ -41,7 +41,7 @@ $vehicules=$results->fetchAll();
         </div>
         <script src="./src/js/script.js"></script>
         <Footer>
-    <?php include './include/footer.php'; ?>
+    
  </footer>
     </body>
 </html>

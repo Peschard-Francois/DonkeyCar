@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <?php  }?>
         </div>
  <Footer>
-    <?php include './include/footer.php'; ?>
+    
  </footer>
 </body>
 
