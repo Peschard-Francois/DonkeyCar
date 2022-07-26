@@ -33,8 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/css/style.css">
-    <link rel="icon" href=DONcarkey.png" type="image/x-icon">
+    <link rel="stylesheet" href="/src/css/home.css">
+    <link rel="icon" href="/src/css/assets/donkeycar.png" type="image/x-icon">
     <title>Donkey Car</title>
 </head>
 <header>
@@ -64,12 +64,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </div>
         <div class="listeCars">
-
-
             <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 foreach ($searchCars as $searchCar) : ?>
+
                     <h3>Vehicule Libre</h3><?= $searchCar['idvehicle'] ?> <?= $searchCar['brandVehicle'] ?>
                     <a href="location.php?id=<?=$searchCar['idvehicle']?>&marque=<?=$searchCar['brandVehicle']?>&modele=<?= $searchCar['modelsVehicle']?>&type=<?= $searchCar['nameType']?>&energy=<?=$searchCar['energyVehicle']?>&seats=<?= $searchCar['nbseatsVehicle']?>&boiteVitesse=<?= $searchCar['gearboxVehicle']?>&datedepart=<?=$departPost?>&datefin=<?=$arrivePost?>"<button>LOUER</button></a>
+
+                    <div class="carInfo">
+                    <h3 class="titleCarInfo">Vehicule Libre</h3>
+                    <?= $searchCar['brandVehicle'] ?>  <?= $searchCar['modelsVehicle'] ?>
+                    </div>
+                    <img class="imgCars" src="<?= $searchCar['imgVehicle'] ?>" alt=" image voiture" ><br>
+
                 <?php endforeach ?>
           <?php  }?>
         </div>
