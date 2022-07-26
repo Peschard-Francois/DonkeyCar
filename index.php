@@ -79,6 +79,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <?php endforeach ?>
           <?php  }?>
         </div>
+ <Footer>
+    <?php include './include/footer.php'; ?>
+ </footer>
 </body>
 
 </html>

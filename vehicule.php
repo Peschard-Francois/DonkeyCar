@@ -40,6 +40,9 @@ $vehicules=$results->fetchAll();
             <?php endforeach ?>
         </div>
         <script src="./src/js/script.js"></script>
+        <Footer>
+    <?php include './include/footer.php'; ?>
+ </footer>
     </body>
 </html>
 
