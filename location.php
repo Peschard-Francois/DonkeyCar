@@ -53,11 +53,6 @@ VALUES(:date1Post,:date2Post,:option1Post,:option2Post,:option3Post,:option4Post
 }
 
 
-
-
-
-
-
 ?>
 
 
@@ -141,6 +136,11 @@ VALUES(:date1Post,:date2Post,:option1Post,:option2Post,:option3Post,:option4Post
             <button type="submit" class="btn btn-primary">Louer</button>
         </div>
     </form>
+    <div>
+        <h2><?=$vehicules['prixLocVehicle']?></h2>
+
+    </div>
+
 </body>
 
 </html>

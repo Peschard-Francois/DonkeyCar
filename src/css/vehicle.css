@@ -42,6 +42,7 @@ h1 {
   background: url("../css/assets/1464.jpg") no-repeat;
   padding: 5px;
   border: 1px solid black;
+  margin-bottom: 280px;
 }
 
 .carContainer.active .carInfo {
