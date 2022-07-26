@@ -5,29 +5,13 @@
   margin: 0;
   padding: 0;
 }
-<<<<<<< HEAD:src/css/index.css
-
-header {
-  position: sticky;
-}
-=======
->>>>>>> 994f35109cc8965a6b23e091e5d0391463d55e1e:src/css/home.css
 
 header {
   position:static;
   z-index: 1000;
 }
 body {
-<<<<<<< HEAD:src/css/index.css
-  background: #333;
-  background: url(assets/car-3531147_960_720.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-=======
   background : #333;
->>>>>>> 994f35109cc8965a6b23e091e5d0391463d55e1e:src/css/home.css
   font-family: Arial, Helvetica, sans-serif;
 }
 .showcase{
@@ -60,24 +44,12 @@ h1 {
   color: #f1f1f1;
 }
 
-<<<<<<< HEAD:src/css/index.css
-h1 span {
-=======
 h1 span{
   font-size: 230%;
->>>>>>> 994f35109cc8965a6b23e091e5d0391463d55e1e:src/css/home.css
   position: relative;
   color: #f1f1f1;
 }
 
-<<<<<<< HEAD:src/css/index.css
-h4 {
-  text-align: center;
-  color: #f1f1f1;
-}
-
-.researchZone {
-=======
 .slogan {
 text-align: center;
 color: aliceblue;
@@ -87,12 +59,11 @@ color: aliceblue;
 .researchZone {
   margin-left: auto;
   margin-right: auto;
->>>>>>> 994f35109cc8965a6b23e091e5d0391463d55e1e:src/css/home.css
   text-align: center;
   padding-top: 10px;
 }
 
-.titleCarInfo {
+.titleCarInfo{
   color: rgb(117, 117, 117);
 }
 
@@ -102,17 +73,15 @@ color: aliceblue;
   border: black solid 1px;
   background-color: rgba(0, 0, 0, 0.829);
 }
-
-.carInfo {
+.carInfo{
   width: 600px;
   height: 100px;
   border: black solid 1px;
   background-color: rgba(0, 0, 0, 0.829);
   padding-top: 2%;
   padding-left: 2%;
-  color: darkgray;
+  color:darkgray;
 }
-
 .listeCars {
   display: grid;
   margin-left: auto;
@@ -120,6 +89,5 @@ color: aliceblue;
   padding-top: 13%;
   /*height: 200px;*/
   color: #f1f1f1;
-}
 
-/*# sourceMappingURL=index.css.map */
+}
