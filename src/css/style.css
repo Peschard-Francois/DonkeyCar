@@ -6,9 +6,18 @@
   padding: 0;
 }
 
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #F1F1F1;
+}
+
 body {
-  background : #333;
-  background: url(/car-3531147_960_720.jpg);
+  background: #333;
+  background: url(assets/porsche-1851246__340.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,52 +28,90 @@ body {
 h1 {
   font-size: 100px;
   text-align: center;
-  padding-top: 200px;
+  padding-top: 20px;
   text-transform: uppercase;
-  color: #f1f1f1;
- 
 }
 
-h1 span{
-  position: relative;
-  color: #f1f1f1;
+.mb-3 {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-
-h4 {
-text-align: center;
-color: #f1f1f1;
+.button {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
 }
 
-.researchZone {
-text-align: center;
-padding-top: 10px;
+button {
+  width: 100%;
 }
 
-.titleCarInfo{
-  color: rgb(117, 117, 117);
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("./assets/road-forest.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  margin-right: 10px;
 }
 
 .imgCars {
-  width: 600px;
-  height: 300px;
-  border: black solid 1px;
-  background-color: rgba(0, 0, 0, 0.829);
-}
-.carInfo{
-  width: 600px;
-  height: 100px;
-  border: black solid 1px;
-  background-color: rgba(0, 0, 0, 0.829);
-  padding-top: 2%;
-  padding-left: 2%;
-  color:darkgray;
-}
-.listeCars {
-  display: grid;
-  margin-left: 28%;
-  padding-top: 13%;
+  width: 300px;
   height: 200px;
-  color: #f1f1f1;
-
+  border: black solid 2px;
 }
+
+.listeCars {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 200px;
+  max-width: 100%;
+  cursor: pointer;
+  padding: 30px;
+}
+
+.carInfo {
+  display: none;
+  text-align: center;
+  color: white;
+  background-size: contain;
+  background: url("../css/assets/1464.jpg") no-repeat;
+  padding: 5px;
+  border: 1px solid black;
+  margin-bottom: 280px;
+}
+
+.carContainer.active .carInfo {
+  display: block;
+}
+
+.carContainer h2 {
+  text-align: center;
+  background: black;
+  color: white;
+}
+
+.carContainer {
+  margin-right: 10px;
+}
+
+a {
+  background: white;
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
