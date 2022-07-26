@@ -42,46 +42,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </header>
 
 <body>
-<section class="showcase">
-    <video src="src/css/assets/Sunrise.mp4" muted loop autoplay></video>
-    <div class="overlay">
-        <h1><span>Donkey</span><span>Car</span></h1>
-        <h4 class="slogan">roulez comme vous êtes</h4>
-        <div class="researchZone">
+    <section class="showcase">
+        <video src="src/css/assets/Sunrise.mp4" muted loop autoplay></video>
+        <div class="overlay">
+            <h1><span>Donkey</span><span>Car</span></h1>
+            <h4 class="slogan">Roulez comme vous êtes</h4>
+            <div class="researchZone">
 
-            <div>
+                <div>
 
-                <form action="" method="POST">
-                    <select name="type" id="typ">
-                        <option value="">Veuillez choisir un type de vehicule</option>
-                        <?php foreach ($type as $types) : ?>
-                            <option value="<?= $types['idtype'] ?>"><?= $types['nameType'] ?></option>
-                        <?php endforeach ?>
-                    </select>
-                    <input name="depart" id="departure" type="date" placeholder="du">
-                    <input name="arrive" id="arrival" type="date">
-                    <button type="submit">Rechercher</button>
-                </form>
-            </div>
-            <div class="listeCars">
-                <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                    foreach ($searchCars as $searchCar) : ?>
-                        <div class="carInfo">
-                            <h3 class="titleCarInfo">Vehicule Libre</h3>
-                            <?= $searchCar['brandVehicle'] ?>  <?= $searchCar['modelsVehicle'] ?>
+                    <form action="" method="POST">
+                        <div class="row">
+                            <div class="col-5">
+                                <select class="form-control" name="type" id="typ">
+                                    <option value="">Selectionnez un type de vehicule</option>
+                                    <?php foreach ($type as $types) : ?>
+                                        <option value="<?= $types['idtype'] ?>"><?= $types['nameType'] ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" name="depart" id="departure" type="date" placeholder="du">
+                            </div>
+                            <div class="col">
+                                <input class="form-control" name="arrive" id="arrival" type="date">
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-primary" type="submit">Rechercher</button>
+                            </div>
                         </div>
-                        <img class="imgCars" src="<?= $searchCar['imgVehicle'] ?>" alt=" image voiture" ><br>
-                    <?php endforeach ?>
-                <?php  }?>
+                    </form>
+                </div>
+                <div class="listeCars">
+                    <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                        foreach ($searchCars as $searchCar) : ?>
+                            <div class="carInfo">
+                                <h3 class="titleCarInfo">Vehicule Libre</h3>
+                                <?= $searchCar['brandVehicle'] ?> <?= $searchCar['modelsVehicle'] ?>
+                            </div>
+                            <img class="imgCars" src="<?= $searchCar['imgVehicle'] ?>" alt=" image voiture"><br>
+                        <?php endforeach ?>
+                    <?php  } ?>
+                </div>
             </div>
-        </div>
-</section>
 
  <Footer>
     
  </footer>
-
-
 
 </body>
 
