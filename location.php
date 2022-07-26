@@ -20,6 +20,7 @@ $seatsGet = $_GET['seats'] ?? '';
 $boiteVitesseGet = $_GET['boiteVitesse'] ?? '';
 $datedepartGet = trim($_GET['datedepart'] ?? '');
 $datefinGet = $_GET['datefin'] ?? '';
+$prixGet = $_GET['prix'] ?? '';
 
 
 
@@ -132,12 +133,16 @@ VALUES(:date1Post,:date2Post,:option1Post,:option2Post,:option3Post,:option4Post
             <label for="option4">GPS </label>
             <input type="checkbox" id="option4" name="option4">
         </div>
+        <div class="mb-3">
+            <h2><?=$prixGet?> €</h2>
+        </div>
+
         <div class="button">
             <button type="submit" class="btn btn-primary">Louer</button>
         </div>
     </form>
     <div>
-        <h2><?=$vehicules['prixLocVehicle']?></h2>
+
 
     </div>
 

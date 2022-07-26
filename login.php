@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+var_dump($_SESSION);
 include './include/header.php';
 
 $pdo = require_once './database.php';
@@ -11,6 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
     $password = $_POST['password'] ?? '';
     $email = $input['email'] ?? '';
+
+    $_SESSION['login'] = trim($_POST['email']);
 
     if (!$password || !$email) {
         $error = 'ERROR';
@@ -30,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             setcookie('session', $sessionId, time() + 60 * 60 * 24 * 7, '', '', false, true);
             setcookie('signature', $signature, time() + 60 * 60 * 24 * 7, '', '', false, true);
             header('Location: /useraccount.php');
+
         } else {
             $error = "MAUVAIS PASSWORD !";
         }
