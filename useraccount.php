@@ -12,7 +12,7 @@ $error = null;
 $success = null;
 $userProfile = $currentUser['username'];
 
-$query = $pdo->query("SELECT * FROM user WHERE username='$userProfile'");
+$query = $pdo->query("SELECT * FROM user WHERE username = '$userProfile'");
 $username = $query->fetchAll();
 /* var_dump($username);
 die(); */
@@ -34,9 +34,9 @@ try {
         ]);
         $success = 'Modifications enregistrées!';
     }
-    $query = getPdo()->prepare('SELECT * FROM user WHERE id = :id');
+    $query = $pdo->prepare('SELECT * FROM user WHERE id = :id');
     $query->execute([
-        'id' => $_GET['id']
+        'id' => $currentUser['id']
     ]);
     $user = $query->fetch();
 } catch (PDOException $e) {
