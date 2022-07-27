@@ -31,9 +31,6 @@ $currentUser = isLoggedIn();
                         <a class="nav-link active" aria-current="page" href="../index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../location.php">Location</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active" href="../vehicule.php">Véhicules</a>
                     </li>
                     <li class="nav-item">
@@ -43,7 +40,7 @@ $currentUser = isLoggedIn();
                 <?php if ($currentUser) : ?>
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="/useraccount.php">Profil</a>
+                            <a class="nav-link active " href="/useraccount.php">Profil</a>
                             <a class="nav-link active" href="/logout.php">Déconnexion</a>
                         <?php else : ?>
                             <a class="nav-link active" href="/login.php">Connexion</a>

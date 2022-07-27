@@ -41,7 +41,7 @@ if (isset($departPost,$arrivePost)){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/css/index.css">
+    <link rel="stylesheet" href="/src/css/style.css">
     <link rel="icon" href="/src/css/assets/donkeycar.png" type="image/x-icon">
     <title>Donkey Car</title>
 </head>
@@ -60,7 +60,7 @@ if (isset($departPost,$arrivePost)){
                     <form action="" method="POST">
                         <div class="row">
                             <div class="col-5">
-                                <select class="form-control" name="type" id="type" required>
+                                <label for="type">Type de Véhicule</label><select class="form-control" name="type" id="type" required>
                                     <option value="">Selectionnez un type de vehicule</option>
                                     <?php foreach ($type as $types) : ?>
                                         <option value="<?= $types['idtype'] ?>"><?= $types['nameType'] ?></option>
@@ -76,7 +76,7 @@ if (isset($departPost,$arrivePost)){
                                 <input class="form-control" name="arrive" id="arrival" type="date" required>
                             </div>
                             <div class="col">
-                                <button class="btn btn-primary" type="submit">Rechercher</button>
+                                <button class="btn btn-primary index-btn" type="submit">Rechercher</button>
                             </div>
                         </div>
                     </form>

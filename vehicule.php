@@ -17,7 +17,7 @@ $vehicules=$results->fetchAll();
     <header>
        <?php include ('include/header.php') ?>
     </header>
-    <body>
+    <body class="body-vehicle">
         <h1>PRESENTATION DES VEHICULES </h1>
         <div  class="listeCars">
             <?php foreach ($vehicules as $vehicule) : ?>
