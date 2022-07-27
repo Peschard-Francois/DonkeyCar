@@ -80,6 +80,7 @@ h1 span {
 }
 
 .carInfo {
+  border-radius: 15px 15px 0px 0px;
   width: 600px;
   height: 100px;
   border: black solid 1px;
