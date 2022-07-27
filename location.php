@@ -73,7 +73,7 @@ if ($option1Post ?? ""){
 <header>
     <?php include './include/header.php'; ?>
 </header>
-<body>
+<body class="body-location">
     <div class="d-flex justify-content-center">
         <h1>Louer un véhicule</h1>
     </div>
