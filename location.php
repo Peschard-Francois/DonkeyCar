@@ -20,7 +20,11 @@ $seatsGet = $_GET['seats'] ?? '';
 $boiteVitesseGet = $_GET['boiteVitesse'] ?? '';
 $datedepartGet = trim($_GET['datedepart'] ?? '');
 $datefinGet = $_GET['datefin'] ?? '';
-$prixGet = $_GET['prix'] ?? '';
+$prixGet = (int)$_GET['prix'] ?? '';
+$nbjourGet = (int)$_GET['nbjour'] ?? '';
+
+
+
 
 
 
@@ -32,27 +36,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $option2Post = $_POST['option2'] ?? '';
     $option3Post = $_POST['option3'] ?? '';
     $option4Post = $_POST['option4'] ?? '';
+    $totalPost= $_POST['total'] ?? '';
+    $louerPost= $_POST['louer'] ?? '';
 
 
-/*    var_dump($idvehiculePost);
-    var_dump($iduser);
-die();*/
-
-
-
-    $statement =  $pdo->prepare("INSERT INTO `reservation` (dateReservationDebut,dateReservationFin,insuranceReservation,adddriverReservation,babyseatReservation,gpsReservation,vehicle_idvehicle,user_id)
-VALUES(:date1Post,:date2Post,:option1Post,:option2Post,:option3Post,:option4Post,'$idvehiculePost','$iduser');");
+if (isset($louerPost)){
+    $statement =  $pdo->prepare("INSERT INTO `reservation` (dateReservationDebut,dateReservationFin,insuranceReservation,adddriverReservation,babyseatReservation,gpsReservation,prixTotalReservation,vehicle_idvehicle,user_id)
+VALUES(:date1Post,:date2Post,:option1Post,:option2Post,:option3Post,:option4Post,:total,'$idvehiculePost','$iduser');");
     $statement->bindValue(':date1Post', $date1Post, PDO::PARAM_STR);
     $statement->bindValue(':date2Post', $date2Post, PDO::PARAM_STR);
     $statement->bindValue(':option1Post', $option1Post, PDO::PARAM_STR);
     $statement->bindValue(':option2Post', $option2Post, PDO::PARAM_STR);
     $statement->bindValue(':option3Post', $option3Post, PDO::PARAM_STR);
     $statement->bindValue(':option4Post', $option4Post, PDO::PARAM_STR);
+    $statement->bindValue(':total', $totalPost, PDO::PARAM_STR);
 
     $statement->execute();
+    /*$resulat= "Réservation Effectuer";*/
     $searchCars = $statement->fetchAll();
 }
 
+}
+
+if ($option1Post ?? ""){
+    $total = ($prixGet * $nbjourGet) + (50 * $nbjourGet);
+}else if($option2Post?? ""){
+    $total = ($prixGet * $nbjourGet) + (40 * $nbjourGet);
+}else if($option3Post?? ""){
+    $total = ($prixGet * $nbjourGet) + (5 * $nbjourGet);
+}else if($option4Post?? ""){
+    $total = ($prixGet * $nbjourGet) + (2 * $nbjourGet);
+}else{
+    $total = ($prixGet * $nbjourGet);
+}
 
 ?>
 
@@ -134,12 +150,18 @@ VALUES(:date1Post,:date2Post,:option1Post,:option2Post,:option3Post,:option4Post
             <input type="checkbox" id="option4" name="option4">
         </div>
         <div class="mb-3">
-            <h2><?=$prixGet?> €</h2>
+            <label for="total">TOTAL</label>
+            <input type="text" value="<?=$total?>" id="total" name="total" >
         </div>
 
         <div class="button">
-            <button type="submit" class="btn btn-primary">Louer</button>
+            <a href="location.php?option1=<?=$option1Post?>&option2=<?=$option2Post ?>&option3=<?= $option3Post?>&option4=<?=$option4Post ?>">Update Prix</a>
         </div>
+        <div class="button">
+            <button type="submit" class="btn btn-primary louer">Louer</button>
+        </div>
+
+        <!--<h3><?/*= $resulat */?></h3>-->
     </form>
     <div>
 

@@ -40,9 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             :password,
             :lastname,
             :firstname,
-            :adress,    
-            :zipcode, 
+            :adress,
             :city,
+            :zipcode, 
             :phone
         )');
 
@@ -61,6 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $statement->execute();
 
         header('Location: /login.php');
+
+
     }
 }
 ?>
@@ -131,6 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit" class="btn btn-primary">Créer compte</button>
             </div>
         </form>
+
  <Footer>
     <?php include './include/footer.php'; ?>
  </footer>
