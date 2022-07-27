@@ -1,5 +1,4 @@
 <?php
-
 require_once './database.php';
 
 function isLoggedIn()
@@ -7,7 +6,6 @@ function isLoggedIn()
     $pdo = getPdo();
     $sessionId = $_COOKIE['session'] ?? '';
     $signature = $_COOKIE['signature'] ?? '';
-
     if ($sessionId && $signature) {
         $hash = hash_hmac('sha256', $sessionId, 'We Love Donkeys !');
         $match = hash_equals($signature, $hash);
