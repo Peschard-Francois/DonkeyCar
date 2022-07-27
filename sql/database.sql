@@ -31,7 +31,7 @@ VALUES
 ('Fiat','500','Essence','2022-01-01',5,'Manuelle','https://sf1.auto-moto.com/wp-content/uploads/sites/9/2014/12/EG1C6264-750x410.jpg',50,1),
 ('Ferrari','296 GTS','Essence','2022-01-01',2,'Manuelle','https://i.gaw.to/content/photos/52/08/520823-ferrari-296-gts-la-sportive-hybride-perd-son-toit.jpeg',600,4),
 ('Maserati','MC20','Essence','2022-01-01',2,'Manuelle','https://imageio.forbes.com/specials-images/imageserve/628d58c17bbe8b71ce7857e6/2023-Maserati-MC20-Cielo-Front/960x0.jpg',600,4),
-('Lamborghini','Terzo Millennio','Essence','2022-01-01',2,'Manuelle','https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Festival_automobile_international_2018_-_Lamborghini_Terzo_Millennio_-_001.jpg',900,5),
+('Lamborghini','Terzo Millennio','Essence','2022-01-01',2,'Manuelle','https://www.turbo.fr/sites/default/files/migration/newscast/field_image/000000008766362.jpg',900,5),
 ('Aston Martin','Vantage','Essence','2022-01-01',2,'Manuelle','https://www.automobile-magazine.fr/asset/cms/840x394/167770/config/116580/amrvantagesabiroblue006-jpg.jpg',750,5);
 
 
