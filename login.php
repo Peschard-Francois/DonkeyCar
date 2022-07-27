@@ -76,9 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit" class="btn btn-primary">Connexion</button>
         </div>
     </form>
-    <Footer>
-    <?php include './include/footer.php'; ?>
- </footer>
+
 </body>
 
 </html>

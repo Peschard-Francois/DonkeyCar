@@ -26,12 +26,12 @@ VALUES
 ('Fiat','500','Essence','2022-01-01',5,'Manuelle','https://sf1.auto-moto.com/wp-content/uploads/sites/9/2014/12/EG1C6264-750x410.jpg',50,1);
 
 
-INSERT INTO `reservation` (dateReservationDebut,dateReservationFin,insuranceReservation,adddriverReservation,babyseatReservation,gpsReservation,vehicle_idvehicle,user_id)
+INSERT INTO `reservation` (dateReservationDebut,dateReservationFin,insuranceReservation,adddriverReservation,babyseatReservation,gpsReservation,prixTotalReservation,vehicle_idvehicle,user_id)
 VALUES
-('2022-10-10','2022-10-20','Oui','Non','Non','Oui',1,1),
-('2022-12-10','2022-12-25','Oui','Non','Non','Oui',3,3),
-('2022-11-10','2022-11-17','Oui','Non','Non','Oui',7,1),
-('2022-09-10','2022-09-22','Oui','Non','Non','Oui',9,2);
+('2022-10-10','2022-10-20','Oui','Non','Non','Oui','600',1,1),
+('2022-12-10','2022-12-25','Oui','Non','Non','Oui','700',3,3),
+('2022-11-10','2022-11-17','Oui','Non','Non','Oui','1200',7,1),
+('2022-09-10','2022-09-22','Oui','Non','Non','Oui','250',9,2);
 
 
   
