@@ -1,16 +1,13 @@
 <?php
 session_start();
-var_dump($_SESSION);
 include('database.php');
 require_once 'isloggedin.php';
-
 
 $currentUser = isLoggedIn();
 $today = date("Y-m-d");
 $pdo = getPdo();
 $results = $pdo->query('SELECT * FROM type');
 $type = $results->fetchAll();
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $idPost = $_POST['type'] ?? '';
@@ -26,22 +23,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if (isset($departPost,$arrivePost)){
-
     // On transforme les 2 dates en timestamp
     $datedepartStr = strtotime($departPost);
     $datearrivetStr = strtotime($arrivePost);
-
     // On récupère la différence de timestamp entre les 2 précédents
     $nbJoursTimestamp = $datearrivetStr - $datedepartStr ;
-
     // ** Pour convertir le timestamp (exprimé en secondes) en jours **
     // On sait que 1 heure = 60 secondes * 60 minutes et que 1 jour = 24 heures donc :
     $nbJours = $nbJoursTimestamp/86400; // 86 400 = 60*60*24
-
-
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -66,9 +56,7 @@ if (isset($departPost,$arrivePost)){
             <h1><span>Donkey</span><span>Car</span></h1>
             <h4 class="slogan">Roulez comme vous êtes</h4>
             <div class="researchZone">
-
                 <div>
-
                     <form action="" method="POST">
                         <div class="row">
                             <div class="col-5">
@@ -96,7 +84,6 @@ if (isset($departPost,$arrivePost)){
                 <div class="listeCars">
                     <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         foreach ($searchCars as $searchCar) : ?>
-
                             <div class="carInfo">
                                 <h3 class="titleCarInfo">Vehicule Libre</h3>
                                 <?= $searchCar['brandVehicle'] ?>  <?= $searchCar['modelsVehicle'] ?>
@@ -107,15 +94,9 @@ if (isset($departPost,$arrivePost)){
                                 <?php  } ?>
                             </div>
                             <img class="imgCars" src="<?= $searchCar['imgVehicle'] ?>" alt=" image voiture" ><br>
-
                         <?php endforeach ?>
                     <?php  }?>
                 </div>
-
-
-
-
-
 </body>
 
 </html>

@@ -4,12 +4,8 @@
 include('database.php');
 require_once 'isloggedin.php';
 
-
 $currentUser = isLoggedIn();
 $iduser = $currentUser['id'];
-
-$pdo = getPdo();
-
 
 $idvehicleGet = $_GET['id'] ?? '';
 $marqueGet = $_GET['marque'] ?? '';
@@ -24,10 +20,6 @@ $prixGet = (int)$_GET['prix'] ?? '';
 $nbjourGet = (int)$_GET['nbjour'] ?? '';
 
 
-
-
-
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $idvehiculePost = $_POST['idvehicule'] ?? '';
     $date1Post = $_POST['date1'] ?? '';
@@ -39,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $totalPost= $_POST['total'] ?? '';
     $louerPost= $_POST['louer'] ?? '';
 
-
+    $pdo = getPdo();
 if (isset($louerPost)){
     $statement =  $pdo->prepare("INSERT INTO `reservation` (dateReservationDebut,dateReservationFin,insuranceReservation,adddriverReservation,babyseatReservation,gpsReservation,prixTotalReservation,vehicle_idvehicle,user_id)
 VALUES(:date1Post,:date2Post,:option1Post,:option2Post,:option3Post,:option4Post,:total,'$idvehiculePost','$iduser');");
@@ -50,14 +42,11 @@ VALUES(:date1Post,:date2Post,:option1Post,:option2Post,:option3Post,:option4Post
     $statement->bindValue(':option3Post', $option3Post, PDO::PARAM_STR);
     $statement->bindValue(':option4Post', $option4Post, PDO::PARAM_STR);
     $statement->bindValue(':total', $totalPost, PDO::PARAM_STR);
-
     $statement->execute();
     /*$resulat= "Réservation Effectuer";*/
     $searchCars = $statement->fetchAll();
+    }
 }
-
-}
-
 if ($option1Post ?? ""){
     $total = ($prixGet * $nbjourGet) + (50 * $nbjourGet);
 }else if($option2Post?? ""){
@@ -69,14 +58,10 @@ if ($option1Post ?? ""){
 }else{
     $total = ($prixGet * $nbjourGet);
 }
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -84,12 +69,10 @@ if ($option1Post ?? ""){
     <link rel="stylesheet" href="/src/css/style.css">
     <title>Location de véhicule</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
 </head>
 <header>
     <?php include './include/header.php'; ?>
 </header>
-
 <body>
     <div class="d-flex justify-content-center">
         <h1>Louer un véhicule</h1>
@@ -97,7 +80,6 @@ if ($option1Post ?? ""){
     <!-- ACTION A AJOUTER -->
     <form action="" method="post">
         <div class="mb-3">
-
             <input type="number" value="<?= $idvehicleGet?>" class="form-control" id="idvehicule" name="idvehicule" hidden>
         </div> <br>
         <div class="mb-3">
@@ -124,7 +106,6 @@ if ($option1Post ?? ""){
             <label for="gearbox">Boite de vitesse :</label>
             <input type="text" value="<?= $boiteVitesseGet?>" class="form-control" id="gearbox" name="gearbox" required disabled="disabled">
         </div> <br>
-
         <div class="mb-3">
             <label for="date1">Au :</label>
             <input type="date" value="<?=$datedepartGet?>" class="form-control" id="date1" name="date1" required>
@@ -153,21 +134,12 @@ if ($option1Post ?? ""){
             <label for="total">TOTAL</label>
             <input type="text" value="<?=$total?>" id="total" name="total" >
         </div>
-
         <div class="button">
             <a href="location.php?option1=<?=$option1Post?>&option2=<?=$option2Post ?>&option3=<?= $option3Post?>&option4=<?=$option4Post ?>">Update Prix</a>
         </div>
         <div class="button">
             <button type="submit" class="btn btn-primary louer">Louer</button>
         </div>
-
-        <!--<h3><?/*= $resulat */?></h3>-->
     </form>
-    <div>
-
-
-    </div>
-
 </body>
-
 </html>
