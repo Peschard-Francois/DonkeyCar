@@ -76,7 +76,7 @@ if (isset($departPost,$arrivePost)){
                                 <input class="form-control" name="arrive" id="arrival" type="date" required>
                             </div>
                             <div class="col">
-                                <button class="btn btn-primary index-btn" type="submit">Rechercher</button>
+                                <button class="btn btn-primary index-btn-search" type="submit">Rechercher</button>
                             </div>
                         </div>
                     </form>
@@ -84,13 +84,13 @@ if (isset($departPost,$arrivePost)){
                 <div class="listeCars">
                     <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         foreach ($searchCars as $searchCar) : ?>
-                            <div class="carInfo">
+                            <div class="carInfo-index">
                                 <h3 class="titleCarInfo">Vehicule Libre</h3>
                                 <?= $searchCar['brandVehicle'] ?>  <?= $searchCar['modelsVehicle'] ?>
                                 <?php if (empty($_SESSION)){ ?>
-                                    <a href="login.php"><button>LOUER</button></a>
+                                    <a class="a-index" href="login.php"><button class="index-btn-loc">LOUER</button></a>
                                 <?php }else{ ?>
-                                    <a href="location.php?id=<?=$searchCar['idvehicle']?>&marque=<?=$searchCar['brandVehicle']?>&modele=<?= $searchCar['modelsVehicle']?>&type=<?= $searchCar['nameType']?>&energy=<?=$searchCar['energyVehicle']?>&seats=<?= $searchCar['nbseatsVehicle']?>&boiteVitesse=<?= $searchCar['gearboxVehicle']?>&datedepart=<?=$departPost?>&datefin=<?=$arrivePost?>&prix=<?=$searchCar['prixLocVehicle']?>&nbjour=<?=$nbJours?>"><button>LOUER</button></a>
+                                    <a class="a-index" href="location.php?id=<?=$searchCar['idvehicle']?>&marque=<?=$searchCar['brandVehicle']?>&modele=<?= $searchCar['modelsVehicle']?>&type=<?= $searchCar['nameType']?>&energy=<?=$searchCar['energyVehicle']?>&seats=<?= $searchCar['nbseatsVehicle']?>&boiteVitesse=<?= $searchCar['gearboxVehicle']?>&datedepart=<?=$departPost?>&datefin=<?=$arrivePost?>&prix=<?=$searchCar['prixLocVehicle']?>&nbjour=<?=$nbJours?>"><button class="index-btn-loc">LOUER</button></a>
                                 <?php  } ?>
                             </div>
                             <img class="imgCars" src="<?= $searchCar['imgVehicle'] ?>" alt=" image voiture" ><br>

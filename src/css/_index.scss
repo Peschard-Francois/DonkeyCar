@@ -79,7 +79,7 @@ h1 span {
   background-color: rgba(0, 0, 0, 0.829);
 }
 
-.carInfo {
+.carInfo-index {
   border-radius: 15px 15px 0px 0px;
   width: 600px;
   height: 100px;
@@ -99,8 +99,17 @@ h1 span {
   color: #f1f1f1;
 }
 
-.index-btn{
+.index-btn-search{
   width: 30%;
   margin-top: 5%;
 }
+
+.index-btn-loc{
+  width: 30%;
+  margin-bottom: 5%;
+  color: black;
+
+
+}
+
 /*# sourceMappingURL=index.css.map */
