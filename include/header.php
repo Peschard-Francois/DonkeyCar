@@ -31,7 +31,7 @@ $currentUser = $modelSession->isLoggedIn();
                     <a class="nav-link active" aria-current="page" href="../index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="index.php?controller=vehicle&task=index">Véhicules</a>
+                    <a class="nav-link active" href="index.php?controller=vehicle&task=find">Véhicules</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="index.php?controller=user&task=contact">Contact</a>
@@ -56,8 +56,6 @@ $currentUser = $modelSession->isLoggedIn();
                     </svg>
                 </li>
             </ul>
-
-
         </div>
     </div>
 </nav>
