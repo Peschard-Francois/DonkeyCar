@@ -60,7 +60,7 @@ if (isset($departPost,$arrivePost)){
                     <form action="" method="POST">
                         <div class="row">
                             <div class="col-5">
-                                <label for="type">Type de Véhicule</label><select class="form-control" name="type" id="type" required>
+                                <label class = "titleInput" for="type">Type de Véhicule</label><select class="form-control" name="type" id="type" required>
                                     <option value="">Selectionnez un type de vehicule</option>
                                     <?php foreach ($type as $types) : ?>
                                         <option value="<?= $types['idtype'] ?>"><?= $types['nameType'] ?></option>
@@ -68,11 +68,11 @@ if (isset($departPost,$arrivePost)){
                                 </select>
                             </div>
                             <div class="col">
-                                <label for="departure">Date Début</label>
+                                <label class = "titleInput" for="departure">Date de Début</label>
                                 <input class="form-control" name="depart" id="departure"  min="<?=$today?>" type="date" required>
                             </div>
                             <div class="col">
-                                <label for="arrival">Date Fin</label>
+                                <label class = "titleInput" for="arrival">Date de Fin</label>
                                 <input class="form-control" name="arrive" id="arrival" type="date" required>
                             </div>
                             <div class="col">
