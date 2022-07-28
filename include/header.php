@@ -18,7 +18,7 @@ $currentUser = isLoggedIn();
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg opacity-50 bg-light">
         <div class="container-fluid">
             <img src="src/css/assets/donkeycar.png" alt="" width="30" height="24">
             <a class="navbar-brand" href="../index.php">DonkeyCar</a>
