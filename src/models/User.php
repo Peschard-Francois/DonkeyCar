@@ -80,7 +80,7 @@ class User extends Model
             $statement->bindValue(':city', $city);
             $statement->bindValue(':phone', $phone);
             $statement->execute();
-            \Http::redirect('index.php?controller=user&task=login');
+            header('location : index.php?controller=session&task=login');
         }
     }
 }

@@ -13,5 +13,6 @@
     </header>
     <body>
         <?= $pageContent ?>
+
     </body>
 </html>

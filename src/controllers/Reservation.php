@@ -7,9 +7,10 @@ class Reservation{
 
 
 
-        if(!empty($_GET['id']&& $_GET['marque'] && $_GET['modele'] && $_GET['type'] && $_GET['energy'] && $_GET['seats'] && $_GET['boiteVitesse'] && $_GET['datedepart'] && $_GET['datefin'] && $_GET['prix'] && $_GET['nbjour'] ))
+        if(!empty($_GET['id']  && $_GET['marque'] && $_GET['modele'] && $_GET['type'] && $_GET['energy'] && $_GET['seats'] && $_GET['boiteVitesse'] && $_GET['datedepart'] && $_GET['datefin'] && $_GET['prix'] && $_GET['nbjour'] ))
         {
             $idvehicleGet = $_GET['id'];
+            $imageGet = $_GET['img'];
             $marqueGet = $_GET['marque'];
             $modeleGet = $_GET['modele'];
             $typeGet = $_GET['type'];
@@ -24,7 +25,7 @@ class Reservation{
 
         $total = calculOption($prixGet,$nbjourGet);
         $pageTitle = "Location";
-        \Renderer::render('pageContent/location', compact('idvehicleGet', 'marqueGet', 'pageTitle' ,'modeleGet', 'typeGet' , 'energyGet', 'seatsGet', 'boiteVitesseGet', 'datedepartGet', 'datefinGet' , 'total'));
+        \Renderer::render('pageContent/location', compact('imageGet','idvehicleGet',  'marqueGet', 'pageTitle' ,'modeleGet', 'typeGet' , 'energyGet', 'seatsGet', 'boiteVitesseGet', 'datedepartGet', 'datefinGet' , 'total'));
 
 
     }
@@ -32,8 +33,8 @@ class Reservation{
     {
         $model = new \Models\Reservation();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $searchCars = $model->insert();
-            header('Location: /index.php');
+            $model->insert();
+            header('Location: index.php?controller=user&task=show');
         }
 
     }

@@ -41,6 +41,6 @@
             <h1 style="color: red;"><?= $error ?></h1>
         <?php endif; ?>
         <div class="button">
-            <button type="submit" class="btn btn-primary">Créer compte</button>
+            <button type="submit" class="btn btn-primary btn-all">Créer compte</button>
         </div>
     </form>

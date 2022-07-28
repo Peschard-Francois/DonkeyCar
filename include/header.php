@@ -43,7 +43,7 @@ $currentUser = $modelSession->isLoggedIn();
                     <a class="nav-link active " href="index.php?controller=user&task=show">Profil</a>
                     <a class="nav-link active" href="index.php?controller=session&task=logout">Déconnexion</a>
                     <?php else : ?>
-                        <a class="nav-link active" href="index.php?controller=session&task=login">Connexion  </a>
+                        <a class="nav-link active header-element" href="index.php?controller=session&task=login">Connexion  </a>
                         <a class="nav-link active" href="index.php?controller=user&task=newUser">S'enregistrer</a>
                     <?php endif; ?>
                 </li>

@@ -14,7 +14,7 @@ class Vehicle {
         $nbJours = null ;
         $currentUser = $modelSession->isLoggedIn();
         $today = date("Y-m-d");
-        $type = $modelType->find();
+        $type = $modelType->findType();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $idPost = $_POST['type'] ?? '';
             $departPost = $_POST['depart'] ?? '';
@@ -30,7 +30,7 @@ class Vehicle {
     public function find(): void
     {
         $modelVehic = new \Models\Vehicle();
-        $vehicules = $modelVehic->find();
+        $vehicules = $modelVehic->findNameType();
         $pageTitle = "Liste Véhicules";
         \Renderer::render('pageContent/vehicle', compact('vehicules','pageTitle' ));
     }
