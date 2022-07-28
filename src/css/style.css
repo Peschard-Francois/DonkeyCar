@@ -60,7 +60,7 @@ button {
 }
 
 .body-vehicle {
-  background-image: url("./assets/road-forest.jpg");
+  background-image: url("./assets/whiteroom.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -152,6 +152,7 @@ body {
   z-index: 10;
 }
 
+
 .showcase video {
   position: fixed;
   top: 0;
@@ -206,6 +207,8 @@ h1 span {
 }
 
 .imgCars {
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 0px 0px 15px 15px ;
   width: 600px;
   height: 300px;
@@ -214,6 +217,8 @@ h1 span {
 }
 
 .carInfo-index {
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 15px 15px 0px 0px;
   width: 600px;
   height: 100px;
@@ -245,6 +250,28 @@ h1 span {
   color: black;
 }
 
+.body-contact{
+  background-image: url("./assets/road-yellow-line.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.label-contact {
+  color: #f1f1f1;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.27);
+  font-size: 30px;
+}
+#H1-contact {
+  font-size: 400%;
+  padding-top: 5%;
+  text-transform: uppercase;
+  color: #f1f1f1;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.71);
+}
+
 /*-------------------------------------------------------------*/
 
 @media (max-width: 768px) {
@@ -267,6 +294,18 @@ h1 span {
   .titleInputV {
     width: 180%;
   }
+  .label-contact {
+    width: 170%;
+  }
+  .body-contact input {
+    width: 180%;
+  }
+  form {
+  margin-left: -50%;
+
+  }
+
+
 }
 /*# sourceMappingURL=index.css.map */
 

@@ -13,29 +13,29 @@ $currentUser = isLoggedIn();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="/src/css/style.css">
 </head>
-<body>
+<body class="body-contact">
     <div class="d-flex justify-content-center">
-        <h1>Restons en contact</h1>
+        <h1 id="H1-contact" >Restons en contact</h1>
     </div>
     <form action="formresult.php" method="post">
         <div class="mb-3">
-            <label for="lname">Nom :</label>
+            <label class="label-contact" for="lname">Nom :</label>
             <input type="text" class="form-control" id="lname" name="user_lname" autofocus>
         </div> <br>
         <div class="mb-3">
-            <label for="name">Prénom :</label>
+            <label class="label-contact" for="name">Prénom :</label>
             <input type="text" class="form-control" id="name" name="user_name" required>
         </div> <br>
         <div class="mb-3">
-            <label for="email">Votre e-mail :</label>
+            <label class="label-contact" for="email">Votre e-mail :</label>
             <input type="email" class="form-control" id="email" name="user_mail" required>
         </div> <br>
         <div class="mb-3">
-            <label for="tel">Telephone :</label>
+            <label class="label-contact" for="tel">Telephone :</label>
             <input type="tel" class="form-control" id="tel" name="user_tel" required>
         </div> <br>
         <div class="mb-3">
-            <label for="message">Message :</label>
+            <label class="label-contact" for="message">Message :</label>
             <textarea class="form-control" id="message" name="user_message" required></textarea>
         </div> <br>
         <div class="button">
