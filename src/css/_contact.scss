@@ -1,0 +1,29 @@
+<?php
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.body-contact{
+  background-image: url("./assets/road-yellow-line.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.label-contact {
+  color: #f1f1f1;
+}
+#H1-contact {
+  font-size: 400%;
+  padding-top: 5%;
+  text-transform: uppercase;
+  color: #f1f1f1;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.71);
+}
+
