@@ -2,11 +2,11 @@
 namespace Models;
 abstract class Model{
     protected $pdo;
-    protected $table;
     public function __construct()
     {
         $this->pdo = \Database::getPdo();
     }
+
     public function find(): bool|array
     {
         $results = $this->pdo->query("SELECT * FROM {$this->table};");

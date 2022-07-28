@@ -1,10 +1,4 @@
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
 
 header {
   position: static;
@@ -51,6 +45,9 @@ body {
   opacity: 0.9;
   z-index: -1;
 }
+.h1-login{
+  margin-top: 105px
+}
 
 h1 {
   font-size: 100px;
@@ -59,12 +56,14 @@ h1 {
   text-transform: uppercase;
   color: #f1f1f1;
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.71);
+  margin-top: 150px;
 }
 
 h1 span {
-  font-size: 230%;
+  font-size: 180%;
   position: relative;
   color: #f1f1f1;
+
 }
 
 .slogan {
@@ -73,7 +72,7 @@ h1 span {
   font-size: 190%;
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.71);
 }
-.titleInput {
+.titleInput-index {
   width: 100%;
   font-size: 150%;
   font-style: italic;
@@ -117,7 +116,7 @@ h1 span {
   color: darkgray;
 }
 
-.listeCars {
+.listeCars-index {
   display: grid;
   margin-left: auto;
   margin-right: auto;
@@ -137,6 +136,16 @@ h1 span {
   color: black;
 
 
+}
+
+footer {
+  display: flex;
+  background: #2c3e50;
+  flex-flow: row-reverse;
+  color: #fff;
+  padding: 1.5rem;
+  margin-top: 50px;
+  margin-bottom: 0;
 }
 
 /*-------------------------------------------------------------*/

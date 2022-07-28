@@ -1,13 +1,7 @@
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
 .body-location{
   background : #333;
-  background: url(assets/porsche-1851246__340.jpg);
+  background: url(assets/bgloc.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -36,4 +30,26 @@ button{
 
 .label-loc{
   color: white;
+  font-size: 20px;
+}
+
+.car-loc{
+
+  margin-left: 35%;
+}
+
+.input-total{
+
+  font-size: 40px;
+  text-align: center;
+  width: 200px;
+  background: transparent;
+  border: none;
+  color: white;
+  text-align: left;
+}
+
+.total{
+  margin-left: 35%;
+  font-size: 40px;
 }

@@ -1,10 +1,3 @@
-*,
-::before,
-::after{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 .body-vehicle{
   background-image: url("./assets/whiteroom.jpg");
@@ -20,42 +13,51 @@ h1{
   margin-right: 10px;
 }
 
-.imgCars {
-  width: 300px;
-  height: 200px;
+.imgCars-vehicule {
+  width: 600px;
+  height: 300px;
   border: black solid 2px;
   vertical-align: top;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  margin-left: 35%;
 
 }
 
 .listeCars {
-  margin-top: 20px;
-  display: flex;
+
   flex-wrap: wrap;
   align-items: center;
   height: 200px;
   max-width: 100%;
   cursor: pointer;
   padding: 30px;
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top:3%;
+  /*height: 200px;*/
+  color: #f1f1f1;
 }
 
 .carInfo {
-  width: 430px;
-  height: 290px;
+  width: 1300px;
+  height: 300px;
   display: none;
   text-align: center;
   color: white;
   background-size: contain;
-  background: url("../css/assets/1464.jpg") no-repeat;
-  padding: 5px;
+  background: url("assets/bgVehicu.jpg") no-repeat;
   border: 1px solid black;
-  margin-bottom: 280px;
+  margin-bottom: 20px;
+  margin-left: 31px;
+  border-radius: 15px;
 }
 
 .carContainer.active .carInfo {
   display: inline-block;
-  padding: 0;
-  margin:0;
+  padding-top: 15px;
+  margin-left: 17%;
 }
 
 .carContainer h2 {
@@ -68,3 +70,4 @@ a{
   background: white;
   color: red;
 }
+

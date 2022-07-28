@@ -1,6 +1,6 @@
 <?php
 namespace Controllers;
-class Session {
+class   Session {
     public function login(): void
     {
         session_start();

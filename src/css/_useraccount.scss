@@ -1,0 +1,38 @@
+.body-profil{
+  background-image: url("assets/bgprofil.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.form-profil{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.title-profil span{
+    font-size: 180%;
+    position: relative;
+    color: black;
+}
+.hello-profil{
+  margin-left: 15px;
+  margin-bottom: 40px;
+  font-size: 60px;
+}
+
+.label-profil{
+  font-weight: bold;
+  font-size: 18px;
+}
+.historique{
+  margin-top: 50px;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.historique h2{
+  font-weight: 700;
+}

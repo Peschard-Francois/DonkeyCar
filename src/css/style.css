@@ -6,17 +6,9 @@
   padding: 0;
 }
 
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .body-location {
   background: #333;
-  background: url(assets/porsche-1851246__340.jpg);
+  background: url(assets/bgloc.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -49,14 +41,26 @@ button {
 
 .label-loc {
   color: white;
+  font-size: 20px;
 }
 
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.car-loc {
+  margin-left: 35%;
+}
+
+.input-total {
+  font-size: 40px;
+  text-align: center;
+  width: 200px;
+  background: transparent;
+  border: none;
+  color: white;
+  text-align: left;
+}
+
+.total {
+  margin-left: 35%;
+  font-size: 40px;
 }
 
 .body-vehicle {
@@ -73,41 +77,49 @@ h1 {
   margin-right: 10px;
 }
 
-.imgCars {
-  width: 300px;
-  height: 200px;
+.imgCars-vehicule {
+  width: 600px;
+  height: 300px;
   border: black solid 2px;
   vertical-align: top;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  margin-left: 35%;
 }
 
 .listeCars {
-  margin-top: 20px;
-  display: flex;
   flex-wrap: wrap;
   align-items: center;
   height: 200px;
   max-width: 100%;
   cursor: pointer;
   padding: 30px;
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 3%;
+  /*height: 200px;*/
+  color: #f1f1f1;
 }
 
 .carInfo {
-  width: 430px;
-  height: 290px;
+  width: 1300px;
+  height: 300px;
   display: none;
   text-align: center;
   color: white;
   background-size: contain;
-  background: url("../css/assets/1464.jpg") no-repeat;
-  padding: 5px;
+  background: url("assets/bgVehicu.jpg") no-repeat;
   border: 1px solid black;
-  margin-bottom: 280px;
+  margin-bottom: 20px;
+  margin-left: 31px;
+  border-radius: 15px;
 }
 
 .carContainer.active .carInfo {
   display: inline-block;
-  padding: 0;
-  margin: 0;
+  padding-top: 15px;
+  margin-left: 17%;
 }
 
 .carContainer h2 {
@@ -119,14 +131,6 @@ h1 {
 a {
   background: white;
   color: red;
-}
-
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 header {
@@ -175,6 +179,10 @@ body {
   z-index: -1;
 }
 
+.h1-login {
+  margin-top: 105px;
+}
+
 h1 {
   font-size: 100px;
   text-align: center;
@@ -182,10 +190,11 @@ h1 {
   text-transform: uppercase;
   color: #f1f1f1;
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.71);
+  margin-top: 150px;
 }
 
 h1 span {
-  font-size: 230%;
+  font-size: 180%;
   position: relative;
   color: #f1f1f1;
 }
@@ -197,7 +206,7 @@ h1 span {
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.71);
 }
 
-.titleInput {
+.titleInput-index {
   width: 100%;
   font-size: 150%;
   font-style: italic;
@@ -241,7 +250,7 @@ h1 span {
   color: darkgray;
 }
 
-.listeCars {
+.listeCars-index {
   display: grid;
   margin-left: auto;
   margin-right: auto;
@@ -259,6 +268,16 @@ h1 span {
   width: 30%;
   margin-bottom: 30%;
   color: black;
+}
+
+footer {
+  display: flex;
+  background: #2c3e50;
+  flex-flow: row-reverse;
+  color: #fff;
+  padding: 1.5rem;
+  margin-top: 50px;
+  margin-bottom: 0;
 }
 
 /*-------------------------------------------------------------*/
@@ -282,6 +301,96 @@ h1 span {
   .titleInputV {
     width: 180%;
   }
+}
+.body-contact {
+  background-image: url("./assets/road-yellow-line.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 50px;
+}
+
+.label-contact {
+  width: 100%;
+  font-size: 150%;
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px rgba(0, 19, 223, 0.5);
+}
+
+.btn-all {
+  width: 250px;
+  margin-left: 35%;
+}
+
+.form-contact {
+  margin-right: 70px;
+}
+
+.title-contact {
+  margin-right: 70px;
+}
+
+.header-element {
+  margin-right: 10px;
+}
+
+.body-login {
+  background-image: url("assets/bglogin.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.h1-login {
+  margin-top: 105px;
+}
+
+.body-profil {
+  background-image: url("assets/bgprofil.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.form-profil {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.title-profil span {
+  font-size: 180%;
+  position: relative;
+  color: black;
+}
+
+.hello-profil {
+  margin-left: 15px;
+  margin-bottom: 40px;
+  font-size: 60px;
+}
+
+.label-profil {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.historique {
+  margin-top: 50px;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.historique h2 {
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */

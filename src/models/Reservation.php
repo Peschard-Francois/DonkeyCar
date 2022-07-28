@@ -2,17 +2,17 @@
 namespace Models;
 require_once ('Model.php');
 class Reservation extends Model {
-    public function insert() : array
+    public function insert()
     {
         $modelSession = new \Models\Session();
         $idvehiculePost = $_POST['idvehicule'] ?? '';
+        $totalPost = $_POST['total'] ?? '';
         $date1Post = $_POST['date1'] ?? '';
         $date2Post = $_POST['date2'] ?? '';
         $option1Post = $_POST['option1'] ?? '';
         $option2Post = $_POST['option2'] ?? '';
         $option3Post = $_POST['option3'] ?? '';
         $option4Post = $_POST['option4'] ?? '';
-        $totalPost= $_POST['total'] ?? '';
         $currentUser = $modelSession->isLoggedIn();
         $iduser = $currentUser['id'];
         $statement =  $this->pdo->prepare("INSERT INTO `reservation` (dateReservationDebut,dateReservationFin,insuranceReservation,adddriverReservation,babyseatReservation,gpsReservation,prixTotalReservation,vehicle_idvehicle,user_id)
@@ -25,9 +25,8 @@ class Reservation extends Model {
         $statement->bindValue(':option4Post', $option4Post);
         $statement->bindValue(':total', $totalPost);
         $statement->execute();
-        $searchCars = $statement->fetchAll();
-        return $searchCars;
     }
+
     public function allById(string $userProfile): bool|array
     {
         $query = $this->pdo->prepare("SELECT * FROM vehicle INNER JOIN reservation ON vehicle.idvehicle = reservation.vehicle_idvehicle INNER JOIN user ON user.id = reservation.user_id WHERE user.username = :userProfile;");
