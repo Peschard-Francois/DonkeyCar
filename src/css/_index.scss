@@ -95,6 +95,9 @@ h1 span {
 }
 
 .imgCars {
+  border-radius: 0px 0px 15px 15px ;
+  margin-left: auto;
+  margin-right: auto;
   width: 600px;
   height: 300px;
   border: black solid 1px;
@@ -133,9 +136,12 @@ h1 span {
 
 
 }
+
+/*-------------------------------------------------------------*/
+
 @media (max-width: 768px) {
   #type.form-control{
-    width: 200%;
+    width: 260%;
   }
   .row {
     flex-direction: column;
@@ -145,10 +151,12 @@ h1 span {
     margin-top: 5%;
   }
   .carInfo-index, .imgCars {
-    width: 60%;
+    width: 90%;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
   }
+  .titleInputV {
+    width: 180%;
+  }
 }
-/*# sourceMappingURL=index.css.map */
