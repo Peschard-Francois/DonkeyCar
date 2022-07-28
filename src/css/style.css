@@ -231,7 +231,17 @@ h1 span {
   margin-bottom: 5%;
   color: black;
 }
-
+@media (max-width: 768px) {
+  #type.form-control{
+    width: 200%;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .index-btn-search {
+    width: 60%;
+    margin-top: 5%;
+}
 /*# sourceMappingURL=index.css.map */
 
 /*# sourceMappingURL=style.css.map */
