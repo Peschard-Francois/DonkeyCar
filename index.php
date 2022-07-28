@@ -60,7 +60,7 @@ if (isset($departPost,$arrivePost)){
                     <form action="" method="POST">
                         <div class="row">
                             <div class="col-5">
-                                <label class = "titleInput" for="type">Type de Véhicule</label><select class="form-control" name="type" id="type" required>
+                                <label class = "titleInputV" for="type">Type de Véhicule</label><select class="form-control" name="type" id="type" required>
                                     <option value="">Selectionnez un type de vehicule</option>
                                     <?php foreach ($type as $types) : ?>
                                         <option value="<?= $types['idtype'] ?>"><?= $types['nameType'] ?></option>

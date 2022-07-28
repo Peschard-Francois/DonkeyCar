@@ -184,7 +184,7 @@ h1 span {
   font-size: 190%;
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.71);
 }
-.titleInput {
+.titleInput, .titleInputV {
   width: 100%;
   font-size: 150%;
   font-style: italic;
@@ -206,6 +206,7 @@ h1 span {
 }
 
 .imgCars {
+  border-radius: 0px 0px 15px 15px ;
   width: 600px;
   height: 300px;
   border: black solid 1px;
@@ -230,6 +231,7 @@ h1 span {
   padding-top: 13%;
   /*height: 200px;*/
   color: #f1f1f1;
+
 }
 
 .index-btn-search {
@@ -242,9 +244,12 @@ h1 span {
   margin-bottom: 5%;
   color: black;
 }
+
+/*-------------------------------------------------------------*/
+
 @media (max-width: 768px) {
   #type.form-control{
-    width: 200%;
+    width: 260%;
   }
   .row {
     flex-direction: column;
@@ -254,10 +259,13 @@ h1 span {
     margin-top: 5%;
   }
   .carInfo-index, .imgCars {
-    width: 60%;
+    width: 90%;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
+  }
+  .titleInputV {
+    width: 180%;
   }
 }
 /*# sourceMappingURL=index.css.map */
