@@ -241,6 +241,13 @@ h1 span {
   .index-btn-search {
     width: 60%;
     margin-top: 5%;
+  }
+  .carInfo-index, .imgCars {
+    width: 60%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 /*# sourceMappingURL=index.css.map */
 
