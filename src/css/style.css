@@ -1,4 +1,10 @@
-
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 *,
 ::before,
@@ -53,7 +59,6 @@ button {
   padding: 0;
 }
 
-
 .body-vehicle {
   background-image: url("./assets/whiteroom.jpg");
   background-size: cover;
@@ -73,7 +78,6 @@ h1 {
   height: 200px;
   border: black solid 2px;
   vertical-align: top;
-
 }
 
 .listeCars {
@@ -103,17 +107,13 @@ h1 {
 .carContainer.active .carInfo {
   display: inline-block;
   padding: 0;
-  margin:0;
+  margin: 0;
 }
 
 .carContainer h2 {
   text-align: center;
   background: black;
   color: white;
-}
-p {
-  text-align: center;
-  font-style: italic;
 }
 
 a {

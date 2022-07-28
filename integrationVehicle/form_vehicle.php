@@ -14,7 +14,7 @@
     </div>
     <div>
         <?php
-        require_once 'database.php';
+        require_once 'Database.php';
         $pdo = getPdo();
         $rech = ("SELECT * FROM bd_donkeycar.type ORDER BY 'idtype' ASC");
         $resultat = $pdo->prepare($rech);
