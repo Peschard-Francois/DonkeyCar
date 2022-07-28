@@ -111,5 +111,16 @@ h1 span {
 
 
 }
+@media (max-width: 768px) {
+  #type.form-control{
+    width: 200%;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .index-btn-search {
+    width: 60%;
+    margin-top: 5%;
+  }
 
 /*# sourceMappingURL=index.css.map */
