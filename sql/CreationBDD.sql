@@ -29,7 +29,7 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `BD_donkeyCar`.`vehicle`
+-- Table `BD_donkeyCar`.`pageContent`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BD_donkeyCar`.`vehicle` (
   `idvehicle` INT NOT NULL AUTO_INCREMENT,

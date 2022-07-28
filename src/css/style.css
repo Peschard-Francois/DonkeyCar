@@ -1,10 +1,3 @@
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 *,
 ::before,
@@ -152,6 +145,16 @@ body {
   z-index: 10;
 }
 
+.showcase video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  z-index: -1;
+}
 
 .showcase video {
   position: fixed;
@@ -185,7 +188,8 @@ h1 span {
   font-size: 190%;
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.71);
 }
-.titleInput, .titleInputV {
+
+.titleInput {
   width: 100%;
   font-size: 150%;
   font-style: italic;
@@ -209,7 +213,7 @@ h1 span {
 .imgCars {
   margin-left: auto;
   margin-right: auto;
-  border-radius: 0px 0px 15px 15px ;
+  border-radius: 0px 0px 15px 15px;
   width: 600px;
   height: 300px;
   border: black solid 1px;
@@ -221,7 +225,7 @@ h1 span {
   margin-right: auto;
   border-radius: 15px 15px 0px 0px;
   width: 600px;
-  height: 100px;
+  height: 135px;
   border: black solid 1px;
   background-color: rgba(0, 0, 0, 0.829);
   padding-top: 2%;
@@ -236,7 +240,6 @@ h1 span {
   padding-top: 13%;
   /*height: 200px;*/
   color: #f1f1f1;
-
 }
 
 .index-btn-search {
@@ -246,36 +249,13 @@ h1 span {
 
 .index-btn-loc {
   width: 30%;
-  margin-bottom: 5%;
+  margin-bottom: 30%;
   color: black;
 }
 
-.body-contact{
-  background-image: url("./assets/road-yellow-line.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.label-contact {
-  color: #f1f1f1;
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.27);
-  font-size: 30px;
-}
-#H1-contact {
-  font-size: 400%;
-  padding-top: 5%;
-  text-transform: uppercase;
-  color: #f1f1f1;
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.71);
-}
-
 /*-------------------------------------------------------------*/
-
 @media (max-width: 768px) {
-  #type.form-control{
+  #type.form-control {
     width: 260%;
   }
   .row {
@@ -294,19 +274,6 @@ h1 span {
   .titleInputV {
     width: 180%;
   }
-  .label-contact {
-    width: 170%;
-  }
-  .body-contact input {
-    width: 180%;
-  }
-  form {
-  margin-left: -50%;
-
-  }
-
-
 }
-/*# sourceMappingURL=index.css.map */
 
 /*# sourceMappingURL=style.css.map */
